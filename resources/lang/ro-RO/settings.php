@@ -11,6 +11,8 @@ return [
     ],
     'localisation' => [
         'tab'               => 'Localizare',
+        'financial_start'   => 'Financial Year Start',
+        'timezone'          => 'Fus orar',
         'date' => [
             'format'        => 'Format dată',
             'separator'     => 'Separator data',
@@ -20,7 +22,6 @@ return [
             'slash'         => 'Slash (/)',
             'space'         => 'Spaţiu ( )',
         ],
-        'timezone'          => 'Fus orar',
         'percent' => [
             'title'         => 'Procent (%) Pozitie',
             'before'        => 'Inainte de Numar',
@@ -33,6 +34,16 @@ return [
         'digit'             => 'Zecimale Numar',
         'next'              => 'Următorul număr',
         'logo'              => 'Siglă',
+        'custom'            => 'Personalizat',
+        'item_name'         => 'Denumire articol',
+        'item'              => 'Articole',
+        'product'           => 'Produse',
+        'service'           => 'Servicii',
+        'price_name'        => 'Price Name',
+        'price'             => 'Preț',
+        'rate'              => 'Rate',
+        'quantity_name'     => 'Quantity Name',
+        'quantity'          => 'Cantitate',
     ],
     'default' => [
         'tab'               => 'Implicit',
@@ -66,6 +77,8 @@ return [
         'bill_days'         => 'Trimite Inainte de Zilele Cuvenite',
         'cron_command'      => 'Comanda Cron',
         'schedule_time'     => 'Ora la care ruleaza',
+        'send_item_reminder'=> 'Send Item Reminder',
+        'item_stocks'       => 'Send When Item Stock',
     ],
     'appearance' => [
         'tab'               => 'Aspect',

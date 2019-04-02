@@ -7,5 +7,10 @@ return [
 
     'error' => [
         'email'             => 'Το email αυτό χρησιμοποιείται ήδη.'
-    ]
+    ],
+
+    'notification' => [
+        'message'       => 'Ο πελάτης :customer πραγματοποίησε πληρωμή :amount για το τιμολόγιο με αριθμό :invoice_number.',
+        'button'        => 'Εμφάνιση',
+    ],
 ];

@@ -38,6 +38,9 @@ return [
     'numbers'               => 'หมายเลข | หมายเลข',
     'statuses'              => 'สถานะ | สถานะ',
     'others'                => 'อื่น ๆ | อื่น ๆ',
+    'contacts'              => 'ผู้ติดต่อ',
+    'reconciliations'       => 'Reconciliation|Reconciliations',
+    'developers'            => 'ผู้พัฒนา',
 
     'dashboard'             => 'แดชบอร์ด',
     'banking'               => 'การธนาคาร',
@@ -81,6 +84,7 @@ return [
     'color'                 => 'สี',
     'save'                  => 'บันทึก',
     'cancel'                => 'ยกเลิก',
+    'loading'               => 'กำลังโหลด...',
     'from'                  => 'จาก',
     'to'                    => 'ถึง',
     'print'                 => 'พิมพ์',
@@ -100,11 +104,30 @@ return [
     'overdue'               => 'ค้างชำระ',
     'partially'             => 'บางส่วน',
     'partially_paid'        => 'ชำระเงินบางส่วน',
+    'export'                => 'ส่งออก',
+    'finish'                => 'เสร็จสิ้น',
+    'wizard'                => 'Wizard',
+    'skip'                  => 'ข้าม',
+    'enable'                => 'เปิดใช้งาน',
+    'disable'               => 'ปิดการใช้งาน',
+    'select_all'            => 'เลือกทั้งหมด',
+    'unselect_all'          => 'ไม่เลือกทั้งหมด',
+    'go_to'                 => 'ไปที่: ชื่อ',
+    'created_date'          => 'วันที่สร้างขึ้น',
+    'period'                => 'รอบระยะเวลา',
+    'start'                 => 'เริ่มต้น',
+    'end'                   => 'สิ้นสุด',
+    'clear'                 => 'ล้างรายการ',
+    'difference'            => 'Difference',
 
     'title' => [
         'new'               => 'ใหม่ :type',
         'edit'              => 'แก้ไข :type',
+        'create'            => 'Create :type',
+        'send'              => 'Send :type',
+        'get'               => 'Get :type',
     ],
+
     'form' => [
         'enter'             => 'กรอก :type',
         'select' => [
@@ -114,4 +137,11 @@ return [
         'no_file_selected'  => 'ไม่ได้เลือกไฟล์...',
     ],
 
+    'date_range' => [
+        'today' => 'วันนี้',
+        'yesterday' => 'เมื่อวานนี้',
+        'last_days' => 'Last :day Days',
+        'this_month' => 'เดือนนี้',
+        'last_month' => 'เดือนที่แล้ว',
+    ],
 ];

@@ -5,7 +5,7 @@
 @section('content')
     <!-- Default box -->
     <div class="box box-success">
-        {!! Form::open(['url' => 'incomes/customers', 'role' => 'form']) !!}
+        {!! Form::open(['url' => 'incomes/customers', 'role' => 'form', 'class' => 'form-loading-button']) !!}
 
         <div class="box-body">
             {{ Form::textGroup('name', trans('general.name'), 'id-card-o') }}
@@ -24,9 +24,14 @@
 
             {{ Form::radioGroup('enabled', trans('general.enabled')) }}
 
-            <div  id="customer-create-user" class="form-group col-md-12 margin-top">
+            {{ Form::textGroup('reference', trans('general.reference'), 'file-text-o', []) }}
+
+
+            @stack('create_user_input_start')
+            <div id="customer-create-user" class="form-group col-md-12 margin-top">
                 <strong>{{ trans('customers.allow_login') }}</strong> &nbsp;  {{ Form::checkbox('create_user', '1', null, ['id' => 'create_user']) }}
             </div>
+            @stack('create_user_input_end')
         </div>
         <!-- /.box-body -->
 
@@ -136,7 +141,15 @@
                             }
 
                             if (json['success']) {
-                                $('input[name="password_confirmation"]').after('<input name="user_id" type="hidden" value="' + json['data']['id'] + '" id="user-id">');
+                                unselect();
+                                $('input[name="email"]').parent().parent().addClass('has-error');
+                                $('input[name="email"]').parent().after('<p class="help-block">{{ trans('customers.error.email') }}</p>');
+                                $('input[name="email"]').focus();
+
+                                $('.box-footer .btn').attr('disabled', false);
+                                $('.loading').remove();
+
+                                return false;
                             }
                         }
                     });

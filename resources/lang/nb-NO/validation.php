@@ -101,6 +101,8 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'invalid_currency' => ':attribute koden er feil.',
+        'invalid_amount'   => 'Beløpets :attribute er feil.',
     ],
 
     /*

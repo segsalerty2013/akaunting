@@ -11,6 +11,8 @@ return [
     ],
     'localisation' => [
         'tab'               => 'ภาษาท้องถิ่น',
+        'financial_start'   => 'เริ่มต้นปีงบประมาณ',
+        'timezone'          => 'โซนเวลา',
         'date' => [
             'format'        => 'รูปแบบวันที่',
             'separator'     => 'ตัวคั่นวันที่',
@@ -20,7 +22,6 @@ return [
             'slash'         => 'เครื่องหมายทับ (/)',
             'space'         => 'ช่องว่าง ( )',
         ],
-        'timezone'          => 'โซนเวลา',
         'percent' => [
             'title'         => 'ตำแหน่ง (%) เปอร์เซ็นต์',
             'before'        => 'ก่อนตัวเลข',
@@ -33,6 +34,16 @@ return [
         'digit'             => 'หมายเลขหลัก',
         'next'              => 'หมายเลขถัดไป',
         'logo'              => 'โลโก้',
+        'custom'            => 'แบบกำหนดเอง',
+        'item_name'         => 'ชื่อสินค้า',
+        'item'              => 'รายการ:',
+        'product'           => 'สินค้า',
+        'service'           => 'บริการ',
+        'price_name'        => 'Price Name',
+        'price'             => 'ราคา',
+        'rate'              => 'อัตรา',
+        'quantity_name'     => 'Quantity Name',
+        'quantity'          => 'จำนวน',
     ],
     'default' => [
         'tab'               => 'ค่าเริ่มต้น',
@@ -66,6 +77,8 @@ return [
         'bill_days'         => 'ส่งก่อนวันครบกำหนด',
         'cron_command'      => 'คำสั่ง Cron',
         'schedule_time'     => 'ชั่วโมงเพื่อเรียกใช้',
+        'send_item_reminder'=> 'Send Item Reminder',
+        'item_stocks'       => 'Send When Item Stock',
     ],
     'appearance' => [
         'tab'               => 'ลักษณะที่ปรากฏ',

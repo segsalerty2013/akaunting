@@ -2,7 +2,7 @@
 
 return [
 
-    'items'                 => 'Vare|Elementer',
+    'items'                 => 'Vare|Varer',
     'incomes'               => 'Indkomst|Indkomster',
     'invoices'              => 'Faktura|Fakturaer',
     'revenues'              => 'Indtægt|Indtægter',
@@ -38,6 +38,9 @@ return [
     'numbers'               => 'Nummer|Numre',
     'statuses'              => 'Status|Statusser',
     'others'                => 'Andre | Andre',
+    'contacts'              => 'Kontakt|Kontakter',
+    'reconciliations'       => 'Afstemt|Afstemninger',
+    'developers'            => 'Udvikler|Udviklere',
 
     'dashboard'             => 'Oversigt',
     'banking'               => 'Bank',
@@ -64,10 +67,10 @@ return [
     'delete_confirm'        => 'Bekræft sletning :name :type?',
     'name'                  => 'Navn',
     'email'                 => 'E-mail',
-    'tax_number'            => 'Moms nummer',
+    'tax_number'            => 'CVR',
     'phone'                 => 'Telefon',
     'address'               => 'Adresse',
-    'website'               => 'Hjemmeside',
+    'website'               => 'Webside',
     'actions'               => 'Handlinger:',
     'description'           => 'Beskrivelse',
     'manage'                => 'Administrér',
@@ -81,6 +84,7 @@ return [
     'color'                 => 'Farve',
     'save'                  => 'Gem',
     'cancel'                => 'Annullér',
+    'loading'               => 'Indlæser...',
     'from'                  => 'Fra:',
     'to'                    => 'Til',
     'print'                 => 'Udskriv',
@@ -95,16 +99,35 @@ return [
     'id'                    => 'ID',
     'more_actions'          => 'Flere handlinger',
     'duplicate'             => 'Dublet',
-    'unpaid'                => 'Ikke betalt',
+    'unpaid'                => 'Ubetalt',
     'paid'                  => 'Betalt',
-    'overdue'               => 'Forfalden',
+    'overdue'               => 'Forsinket',
     'partially'             => 'Delvist',
     'partially_paid'        => 'Delvist betalt',
+    'export'                => 'Eksportér',
+    'finish'                => 'Færdig',
+    'wizard'                => 'Guide',
+    'skip'                  => 'Spring over',
+    'enable'                => 'Aktivér',
+    'disable'               => 'Deaktiver',
+    'select_all'            => 'Vælg alle',
+    'unselect_all'          => 'Fravælge alle',
+    'go_to'                 => 'Gå til :name',
+    'created_date'          => 'Oprettelsesdato',
+    'period'                => 'Periode',
+    'start'                 => 'Start',
+    'end'                   => 'Slut',
+    'clear'                 => 'Ryd',
+    'difference'            => 'Forskel',
 
     'title' => [
         'new'               => 'Ny :type',
         'edit'              => 'Rediger :type',
+        'create'            => 'Opret !type',
+        'send'              => 'Send :type',
+        'get'               => 'Hent :type',
     ],
+
     'form' => [
         'enter'             => 'Indtast: :field',
         'select' => [
@@ -114,4 +137,11 @@ return [
         'no_file_selected'  => 'Ingen fil valgt...',
     ],
 
+    'date_range' => [
+        'today' => 'I dag',
+        'yesterday' => 'I går',
+        'last_days' => 'Sidste :days dage',
+        'this_month' => 'Denne måned',
+        'last_month' => 'Sidste måned',
+    ],
 ];

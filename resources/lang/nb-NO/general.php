@@ -2,15 +2,15 @@
 
 return [
 
-    'items'                 => 'Enhet | Enheter',
+    'items'                 => 'Artikkel | Artikler',
     'incomes'               => 'Inntekt | Inntekter',
     'invoices'              => 'Faktura | Fakturaer',
-    'revenues'              => 'Inntekt | Inntekter',
+    'revenues'              => 'Innbetaling | Innbetalinger',
     'customers'             => 'Kunde | Kunder',
     'expenses'              => 'Utgift | Utgifter',
     'bills'                 => 'Faktura | Fakturaer',
-    'payments'              => 'Betaling | Betalinger',
-    'vendors'               => 'Selger | Selgere',
+    'payments'              => 'Utbetaling | Utbetalinger',
+    'vendors'               => 'Leverandør | Leverandører',
     'accounts'              => 'Konto | Kontoer',
     'transfers'             => 'Overføring | Overføringer',
     'transactions'          => 'Transaksjon | Transaksjoner',
@@ -30,7 +30,7 @@ return [
     'pictures'              => 'Bilde | Bilder',
     'types'                 => 'Type | Typer',
     'payment_methods'       => 'Betalingsmåte | Betalingsmåter',
-    'compares'              => 'Inntekt vs. utgift | Inntekter vs. utgifter',
+    'compares'              => 'Inntekt mot utgift | Inntekter mot utgifter',
     'notes'                 => 'Notat | Notater',
     'totals'                => 'Totalt | Totaler',
     'languages'             => 'Språk | Språk',
@@ -38,6 +38,9 @@ return [
     'numbers'               => 'Nummer | Nummer',
     'statuses'              => 'Status | Statuser',
     'others'                => 'Annen | Andre',
+    'contacts'              => 'Kontakt|Kontakter',
+    'reconciliations'       => 'Avstemming|Avstemminger',
+    'developers'            => 'Utvikler|Utviklere',
 
     'dashboard'             => 'Kontrollpanel',
     'banking'               => 'Bank',
@@ -64,7 +67,7 @@ return [
     'delete_confirm'        => 'Bekreft sletting av :name :type?',
     'name'                  => 'Navn',
     'email'                 => 'E-post',
-    'tax_number'            => 'Organisasjonsnummer',
+    'tax_number'            => 'Org.nr',
     'phone'                 => 'Telefon',
     'address'               => 'Adresse',
     'website'               => 'Nettside',
@@ -81,6 +84,7 @@ return [
     'color'                 => 'Farge',
     'save'                  => 'Lagre',
     'cancel'                => 'Avbryt',
+    'loading'               => 'Laster...',
     'from'                  => 'Fra',
     'to'                    => 'Til',
     'print'                 => 'Skriv ut',
@@ -100,11 +104,30 @@ return [
     'overdue'               => 'Forfalt',
     'partially'             => 'Delvis',
     'partially_paid'        => 'Delvis betalt',
+    'export'                => 'Eksport',
+    'finish'                => 'Ferdigstill',
+    'wizard'                => 'Veiledning',
+    'skip'                  => 'Hopp over',
+    'enable'                => 'Aktiver',
+    'disable'               => 'Deaktiver',
+    'select_all'            => 'Velg alle',
+    'unselect_all'          => 'Velg ingen',
+    'go_to'                 => 'Gå til :name',
+    'created_date'          => 'Opprettet dato',
+    'period'                => 'Periode',
+    'start'                 => 'Start',
+    'end'                   => 'Slutt',
+    'clear'                 => 'Nullstill',
+    'difference'            => 'Forskjell',
 
     'title' => [
         'new'               => 'Ny :type',
         'edit'              => 'Endre :type',
+        'create'            => 'Opprett :type',
+        'send'              => 'Send :type',
+        'get'               => 'Motta :type',
     ],
+
     'form' => [
         'enter'             => 'Fyll inn :field',
         'select' => [
@@ -114,4 +137,11 @@ return [
         'no_file_selected'  => 'Ingen fil valgt ...',
     ],
 
+    'date_range' => [
+        'today' => 'I dag',
+        'yesterday' => 'I går',
+        'last_days' => 'Siste :day dager',
+        'this_month' => 'Denne måneden',
+        'last_month' => 'Forrige måned',
+    ],
 ];

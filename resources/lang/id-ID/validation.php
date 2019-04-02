@@ -20,7 +20,7 @@ return [
     'alpha'                => 'Isian :attribute hanya boleh berisi huruf.',
     'alpha_dash'           => 'Isian :attribute hanya boleh berisi huruf, angka, dan strip.',
     'alpha_num'            => 'Isian :attribute hanya boleh berisi huruf dan angka.',
-    'array'                => 'Isian :attribute harus berupa sebuah array.',
+    'array'                => 'Isian :attribute harus berupa array.',
     'before'               => 'Isian :attribute harus tanggal sebelum :date.',
     'before_or_equal'      => 'Isian :attribute harus berupa tanggal sebelum atau sama dengan tanggal :date.',
     'between'              => [
@@ -101,6 +101,8 @@ return [
         'attribute-name' => [
             'rule-name' => 'kustomisasi-pesan',
         ],
+        'invalid_currency' => ':attribute kode tidak valid.',
+        'invalid_amount'   => 'Jumlah :attribute tidak valid.',
     ],
 
     /*

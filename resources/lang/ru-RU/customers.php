@@ -7,5 +7,10 @@ return [
 
     'error' => [
         'email'             => 'Этот e-mail уже занят.'
-    ]
+    ],
+
+    'notification' => [
+        'message'       => ':клиент сделал :amount оплаты на номер счета :invoice_number.',
+        'button'        => 'Показать',
+    ],
 ];

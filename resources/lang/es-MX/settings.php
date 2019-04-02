@@ -11,6 +11,8 @@ return [
     ],
     'localisation' => [
         'tab'               => 'Localización',
+        'financial_start'   => 'Financial Year Start',
+        'timezone'          => 'Zona Horaria',
         'date' => [
             'format'        => 'Formato de Fecha',
             'separator'     => 'Separador de Fecha',
@@ -20,7 +22,6 @@ return [
             'slash'         => 'Barra (/)',
             'space'         => 'Espacio ( )',
         ],
-        'timezone'          => 'Zona Horaria',
         'percent' => [
             'title'         => 'Posición Porcentaje (%)',
             'before'        => 'Antes del Número',
@@ -33,6 +34,16 @@ return [
         'digit'             => 'Número de Dígitos',
         'next'              => 'Siguiente Número',
         'logo'              => 'Logotipo',
+        'custom'            => 'Personalizado',
+        'item_name'         => 'Nombre del elemento',
+        'item'              => 'Elementos',
+        'product'           => 'Productos',
+        'service'           => 'Servicios',
+        'price_name'        => 'Nombre del Precio',
+        'price'             => 'Precio',
+        'rate'              => 'Tasa',
+        'quantity_name'     => 'Nombre de la Cantidad',
+        'quantity'          => 'Cantidad',
     ],
     'default' => [
         'tab'               => 'Valores Predeterminados',
@@ -66,6 +77,8 @@ return [
         'bill_days'         => 'Enviar Antes del Vencimiento',
         'cron_command'      => 'Comando de Cron',
         'schedule_time'     => 'Hora de Ejecución',
+        'send_item_reminder'=> 'Enviar Recordatorio del Elemento',
+        'item_stocks'       => 'Enviar Cuando Exista Stock del Elemento',
     ],
     'appearance' => [
         'tab'               => 'Apariencia',

@@ -37,7 +37,9 @@ return [
     'updates'               => 'به روز رسانی | به روز رسانی',
     'numbers'               => 'شماره | تعداد',
     'statuses'              => 'وضعیت | وضعیت',
-    'others'                => 'Other|Others',
+    'others'                => 'سایر |‌ سایرین',
+    'contacts'              => 'Contact|Contacts',
+    'reconciliations'       => 'Reconciliation|Reconciliations',
 
     'dashboard'             => 'پیشخوان',
     'banking'               => 'بانکداری',
@@ -81,6 +83,7 @@ return [
     'color'                 => 'رنگ',
     'save'                  => 'ذخیره کردن',
     'cancel'                => 'انصراف',
+    'loading'               => 'درحال بارگذاری...',
     'from'                  => 'از',
     'to'                    => 'به',
     'print'                 => 'چاپ کن',
@@ -100,11 +103,30 @@ return [
     'overdue'               => 'سر رسید شده',
     'partially'             => 'جزئی',
     'partially_paid'        => 'پرداخت جزئی',
+    'export'                => 'گرفتن خروجی',
+    'finish'                => 'پایان',
+    'wizard'                => 'Wizard',
+    'skip'                  => 'صرف‌نظر',
+    'enable'                => 'فعال',
+    'disable'               => 'غیر فعال',
+    'select_all'            => 'انتخاب همه',
+    'unselect_all'          => 'عدم انتخاب همه',
+    'go_to'                 => 'برو به: نام',
+    'created_date'          => 'تاریخ ایجاد',
+    'period'                => 'دوره',
+    'start'                 => 'شروع',
+    'end'                   => 'پایان',
+    'clear'                 => 'پاک کردن',
+    'difference'            => 'تفاوت',
 
     'title' => [
         'new'               => ':type جدید',
         'edit'              => 'ویرایش :type',
+        'create'            => 'ایجاد: نوع',
+        'send'              => 'ارسال: نوع',
+        'get'               => 'Get :type',
     ],
+
     'form' => [
         'enter'             => 'واردکردن :field',
         'select' => [
@@ -114,4 +136,11 @@ return [
         'no_file_selected'  => 'هیچ فایلی انتخاب نشده...',
     ],
 
+    'date_range' => [
+        'today' => 'امروز',
+        'yesterday' => 'ديروز',
+        'last_days' => 'Last :day Days',
+        'this_month' => 'این ماه',
+        'last_month' => 'ماه قبل',
+    ],
 ];

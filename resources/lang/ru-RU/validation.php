@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'accepted'             => 'Вы должны принять :attribute.',
+    'accepted'             => ':attribute должен быть принят.',
     'active_url'           => 'Поле :attribute содержит недействительный URL.',
     'after'                => 'В поле :attribute должна быть дата после :date.',
     'after_or_equal'       => 'В поле :attribute должна быть дата после или равняться :date.',
@@ -101,6 +101,8 @@ return [
         'attribute-name' => [
             'rule-name' => 'Настраиваемое сообщение',
         ],
+        'invalid_currency' => 'Код :attribute неверен.',
+        'invalid_amount'   => 'Значение :attribute неверно.',
     ],
 
     /*

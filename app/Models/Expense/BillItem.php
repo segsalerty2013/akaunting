@@ -17,7 +17,7 @@ class BillItem extends Model
      *
      * @var array
      */
-    protected $fillable = ['company_id', 'bill_id', 'item_id', 'name', 'sku', 'quantity', 'price', 'total', 'tax', 'tax_id'];
+    protected $fillable = ['company_id', 'bill_id', 'item_id', 'name', 'sku', 'quantity', 'price', 'total', 'tax'];
 
     public function bill()
     {
@@ -29,9 +29,9 @@ class BillItem extends Model
         return $this->belongsTo('App\Models\Common\Item');
     }
 
-    public function tax()
+    public function taxes()
     {
-        return $this->belongsTo('App\Models\Setting\Tax');
+        return $this->hasMany('App\Models\Expense\BillItemTax', 'bill_item_id', 'id');
     }
 
     /**
@@ -54,5 +54,16 @@ class BillItem extends Model
     public function setTotalAttribute($value)
     {
         $this->attributes['total'] = (double) $value;
+    }
+
+    /**
+     * Convert tax to double.
+     *
+     * @param  string  $value
+     * @return void
+     */
+    public function setTaxAttribute($value)
+    {
+        $this->attributes['tax'] = (double) $value;
     }
 }

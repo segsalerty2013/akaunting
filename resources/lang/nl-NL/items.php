@@ -2,14 +2,17 @@
 
 return [
 
-    'quantities'            => 'Hoeveelheid | Hoeveelheden',
+    'quantities'            => 'Hoeveelheid|Hoeveelheden',
     'sales_price'           => 'Verkoopprijs',
     'purchase_price'        => 'Aankoopprijs',
     'sku'                   => 'SKU',
 
     'notification' => [
-        'message'       => 'U ontvangt deze e-mail omdat :name draait niet op voorraad.',
-        'button'        => 'Bekijk nu',
+        'message'       => [
+            'reminder' => 'U ontvangt deze e-mail omdat alleen :quantity van :name over is.',
+            'out_of_stock' => 'U ontvangt deze e-mail omdat er bijna geen voorraad meer is van: :name.',
+        ],
+        'button'        => 'Nu bekijken',
     ],
 
 ];

@@ -7,5 +7,10 @@ return [
 
     'error' => [
         'email'             => 'E-postadressen er allerede i bruk.'
-    ]
+    ],
+
+    'notification' => [
+        'message'       => ':customer betalte :amount mot faktura :invoice_number.',
+        'button'        => 'Vis',
+    ],
 ];

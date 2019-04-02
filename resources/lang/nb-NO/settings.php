@@ -11,6 +11,8 @@ return [
     ],
     'localisation' => [
         'tab'               => 'Lokalisering',
+        'financial_start'   => 'Start på regnskapsår',
+        'timezone'          => 'Tidssone',
         'date' => [
             'format'        => 'Datoformat',
             'separator'     => 'Datoseparator',
@@ -20,7 +22,6 @@ return [
             'slash'         => 'Skråstrek (/)',
             'space'         => 'Mellomrom ( )',
         ],
-        'timezone'          => 'Tidssone',
         'percent' => [
             'title'         => 'Prosentplassering (%)',
             'before'        => 'Før nummer',
@@ -33,6 +34,16 @@ return [
         'digit'             => 'Antall siffer',
         'next'              => 'Neste nummer',
         'logo'              => 'Logo',
+        'custom'            => 'Tilpasset',
+        'item_name'         => 'Artikkelnavn',
+        'item'              => 'Artikler',
+        'product'           => 'Produkter',
+        'service'           => 'Tjenester',
+        'price_name'        => 'Prisnavn',
+        'price'             => 'Pris',
+        'rate'              => 'Sats',
+        'quantity_name'     => 'Kvantitetsnavn',
+        'quantity'          => 'Kvantitet',
     ],
     'default' => [
         'tab'               => 'Standardinnstilinger',
@@ -66,6 +77,8 @@ return [
         'bill_days'         => 'Antall dager før forfall for utsending',
         'cron_command'      => 'Cron-kommando',
         'schedule_time'     => 'Tid for kjøring',
+        'send_item_reminder'=> 'Send artikkelpåminnelse',
+        'item_stocks'       => 'Send en lagerpåminnelse',
     ],
     'appearance' => [
         'tab'               => 'Utseende',

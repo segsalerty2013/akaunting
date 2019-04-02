@@ -22,9 +22,9 @@ return [
         ],
         'timezone'          => 'Часова зона',
         'percent' => [
-            'title'         => 'Percent (%) Position',
-            'before'        => 'Before Number',
-            'after'         => 'After Number',
+            'title'         => 'Процент (%) Позиция',
+            'before'        => 'Преди номер',
+            'after'         => 'След номер',
         ],
     ],
     'invoice' => [
@@ -33,6 +33,16 @@ return [
         'digit'             => 'Брой цифри',
         'next'              => 'Следващия номер',
         'logo'              => 'Лого',
+        'custom'            => 'По избор',
+        'item_name'         => 'Име',
+        'item'              => 'Продукти',
+        'product'           => 'Продукти',
+        'service'           => 'Услуги',
+        'price_name'        => 'Цена Име',
+        'price'             => 'Цена',
+        'rate'              => 'Данък',
+        'quantity_name'     => 'Количество Име',
+        'quantity'          => 'Количество',
     ],
     'default' => [
         'tab'               => 'По подразбиране',
@@ -66,6 +76,8 @@ return [
         'bill_days'         => 'Изпрати преди забавени дни',
         'cron_command'      => 'Грешна команда',
         'schedule_time'     => 'Час за стартиране',
+        'send_item_reminder'=> 'Изпрати напомняне',
+        'item_stocks'       => 'Изпрати когато продукта е наличен',
     ],
     'appearance' => [
         'tab'               => 'Външен вид',
