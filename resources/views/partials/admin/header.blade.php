@@ -3,17 +3,17 @@
 <header class="main-header">
     <!-- Logo -->
     <a href="{{ url('/') }}" class="logo">
-        @if (setting('general.admin_theme', 'skin-green-light') == 'skin-green-light')
-            <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><img src="{{ asset('public/img/akaunting-logo-white.png') }}" class="logo-image-mini" width="25" alt="Akaunting Logo"></span>
-            <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><img src="{{ asset('public/img/akaunting-logo-white.png') }}" class="logo-image-lg" width="25" alt="Akaunting Logo"> <b>Akaunting</b></span>
-        @else
-            <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><img src="{{ asset('public/img/akaunting-logo-green.png') }}" class="logo-image-mini" width="25" alt="Akaunting Logo"></span>
-            <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><img src="{{ asset('public/img/akaunting-logo-green.png') }}" class="logo-image-lg" width="25" alt="Akaunting Logo"> <b>Akaunting</b></span>
-        @endif
+{{--        @if (setting('general.admin_theme', 'skin-green-light') == 'skin-green-light')--}}
+{{--            <!-- mini logo for sidebar mini 50x50 pixels -->--}}
+{{--            <span class="logo-mini"><img src="{{ asset('public/img/akaunting-logo-white.png') }}" class="logo-image-mini" width="25" alt="Akaunting Logo"></span>--}}
+{{--            <!-- logo for regular state and mobile devices -->--}}
+{{--            <span class="logo-lg"><img src="{{ asset('public/img/akaunting-logo-white.png') }}" class="logo-image-lg" width="25" alt="Akaunting Logo"> <b>Akaunting</b></span>--}}
+{{--        @else--}}
+{{--            <!-- mini logo for sidebar mini 50x50 pixels -->--}}
+{{--            <span class="logo-mini"><img src="{{ asset('public/img/akaunting-logo-green.png') }}" class="logo-image-mini" width="25" alt="Akaunting Logo"></span>--}}
+{{--            <!-- logo for regular state and mobile devices -->--}}
+{{--            <span class="logo-lg"><img src="{{ asset('public/img/akaunting-logo-green.png') }}" class="logo-image-lg" width="25" alt="Akaunting Logo"> <b>Akaunting</b></span>--}}
+{{--        @endif--}}
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -144,28 +144,28 @@
                 </li>
                 @endpermission
                 <!-- Tasks: style can be found in dropdown.less -->
-                <li class="dropdown tasks-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-flag-o"></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header">{{ trans('header.change_language') }}</li>
-                        <li>
-                            <!-- inner menu: contains the actual data -->
-                            {!! language()->flags() !!}
-                        </li>
-                    </ul>
-                </li>
+{{--                <li class="dropdown tasks-menu">--}}
+{{--                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">--}}
+{{--                        <i class="fa fa-flag-o"></i>--}}
+{{--                    </a>--}}
+{{--                    <ul class="dropdown-menu">--}}
+{{--                        <li class="header">{{ trans('header.change_language') }}</li>--}}
+{{--                        <li>--}}
+{{--                            <!-- inner menu: contains the actual data -->--}}
+{{--                            {!! language()->flags() !!}--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
                 @permission('read-install-updates')
                 <!-- Updates: style can be found in dropdown.less -->
-                <li>
-                    <a href="{{ url('install/updates') }}" data-toggle="tooltip" data-placement="bottom" title="{{ $updates }} Updates Available">
-                        <i class="fa fa-refresh"></i>
-                        @if ($updates)
-                        <span class="label label-danger">{{ $updates }}</span>
-                        @endif
-                    </a>
-                </li>
+{{--                <li>--}}
+{{--                    <a href="{{ url('install/updates') }}" data-toggle="tooltip" data-placement="bottom" title="{{ $updates }} Updates Available">--}}
+{{--                        <i class="fa fa-refresh"></i>--}}
+{{--                        @if ($updates)--}}
+{{--                        <span class="label label-danger">{{ $updates }}</span>--}}
+{{--                        @endif--}}
+{{--                    </a>--}}
+{{--                </li>--}}
                 @endpermission
                 <!-- Updates: style can be found in dropdown.less -->
                 <li class="hidden-xs">

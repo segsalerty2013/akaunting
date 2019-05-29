@@ -8,7 +8,7 @@
             @stack('login_box_start')
 
             <div class="login-logo">
-                <img src="{{ asset('public/img/akaunting-logo-white.png') }}" alt="Akaunting" />
+                <i class="fa-2x fa fa-lock"></i>
             </div>
             <!-- /.login-logo -->
 
@@ -26,7 +26,7 @@
             <!-- /.login-box-body -->
 
             <div class="login-box-footer">
-                {{ trans('footer.powered') }}: <a href="{{ trans('footer.link') }}" target="_blank">{{ trans('footer.software') }}</a>
+                <a href="{{ config('app.url') }}" target="_blank"><<< back to main store</a>
             </div>
             <!-- /.login-box-footer -->
 
