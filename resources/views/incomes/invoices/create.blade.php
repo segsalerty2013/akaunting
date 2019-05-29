@@ -158,7 +158,7 @@
     <script src="{{ asset('vendor/almasaeed2010/adminlte/plugins/datepicker/locales/bootstrap-datepicker.' . language()->getShortCode() . '.js') }}"></script>
     @endif
     <script src="{{ asset('public/js/bootstrap-fancyfile.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
     <script src="{{ asset('vendor/almasaeed2010/adminlte/plugins/colorpicker/bootstrap-colorpicker.js') }}"></script>
 @endpush
 
@@ -194,12 +194,12 @@
             $('.input-price').maskMoney({
                 thousands : '{{ $currency->thousands_separator }}',
                 decimal : '{{ $currency->decimal_mark }}',
-                precision : {{ $currency->precision }},
+                precision : parseInt('{{ $currency->precision }}'),
                 allowZero : true,
                 @if($currency->symbol_first)
-                prefix : '{{ $currency->symbol }}'
+                prefix : '{{ $currency->symbol }}',
                 @else
-                suffix : '{{ $currency->symbol }}'
+                suffix : '{{ $currency->symbol }}',
                 @endif
             });
 
@@ -376,6 +376,7 @@
                     totalItem();
                 }
             });
+            $(this).focus();
         });
 
         $(document).on('click', '#tax-add-new', function(e) {
