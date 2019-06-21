@@ -9,8 +9,7 @@
             'method' => 'PATCH',
             'files' => true,
             'url' => ['expenses/vendors', $vendor->id],
-            'role' => 'form',
-            'class' => 'form-loading-button'
+            'role' => 'form'
         ]) !!}
 
         <div class="box-body">
@@ -31,9 +30,6 @@
             {{ Form::fileGroup('logo', trans_choice('general.logos', 1)) }}
 
             {{ Form::radioGroup('enabled', trans('general.enabled')) }}
-
-            {{ Form::textGroup('reference', trans('general.reference'), 'file-text-o', []) }}
-
         </div>
         <!-- /.box-body -->
 
@@ -69,30 +65,31 @@
                 text  : '{{ trans('general.form.select.file') }}',
                 style : 'btn-default',
                 @if($vendor->logo)
-                placeholder : '{{ $vendor->logo->basename }}'
+                placeholder : '<?php echo $vendor->logo->basename; ?>'
                 @else
                 placeholder : '{{ trans('general.form.no_file_selected') }}'
                 @endif
             });
 
             @if($vendor->logo)
-            $.ajax({
-                url: '{{ url('uploads/' . $vendor->logo->id . '/show') }}',
-                type: 'GET',
-                data: {column_name: 'logo'},
-                dataType: 'JSON',
-                success: function(json) {
-                    if (json['success']) {
-                        $('.fancy-file').after(json['html']);
-                    }
-                }
-            });
+            logo_html  = '<span class="logo">';
+            logo_html += '    <a href="{{ url('uploads/' . $vendor->logo->id . '/download') }}">';
+            logo_html += '        <span id="download-logo" class="text-primary">';
+            logo_html += '            <i class="fa fa-file-{{ $vendor->logo->aggregate_type }}-o"></i> {{ $vendor->logo->basename }}';
+            logo_html += '        </span>';
+            logo_html += '    </a>';
+            logo_html += '    {!! Form::open(['id' => 'logo-' . $vendor->logo->id, 'method' => 'DELETE', 'url' => [url('uploads/' . $vendor->logo->id)], 'style' => 'display:inline']) !!}';
+            logo_html += '    <a id="remove-logo" href="javascript:void();">';
+            logo_html += '        <span class="text-danger"><i class="fa fa fa-times"></i></span>';
+            logo_html += '    </a>';
+            logo_html += '    {!! Form::close() !!}';
+            logo_html += '</span>';
 
-            @permission('delete-common-uploads')
+            $('.fancy-file .fake-file').append(logo_html);
+
             $(document).on('click', '#remove-logo', function (e) {
                 confirmDelete("#logo-{!! $vendor->logo->id !!}", "{!! trans('general.attachment') !!}", "{!! trans('general.delete_confirm', ['name' => '<strong>' . $vendor->logo->basename . '</strong>', 'type' => strtolower(trans('general.attachment'))]) !!}", "{!! trans('general.cancel') !!}", "{!! trans('general.delete')  !!}");
             });
-            @endpermission
             @endif
         });
     </script>

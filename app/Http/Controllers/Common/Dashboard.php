@@ -12,18 +12,14 @@ use App\Models\Income\InvoicePayment;
 use App\Models\Income\Revenue;
 use App\Models\Setting\Category;
 use App\Traits\Currencies;
-use App\Traits\DateTime;
 use Charts;
 use Date;
 
 class Dashboard extends Controller
 {
-    use Currencies, DateTime;
+    use Currencies;
 
     public $today;
-    
-    // get any custom financial year beginning
-    public $financial_start;
 
     public $income_donut = ['colors' => [], 'labels' => [], 'values' => []];
 
@@ -37,7 +33,6 @@ class Dashboard extends Controller
     public function index()
     {
         $this->today = Date::today();
-        $this->financial_start = $financial_start = $this->getFinancialStart()->format('Y-m-d');
 
         list($total_incomes, $total_expenses, $total_profit) = $this->getTotals();
 
@@ -60,8 +55,7 @@ class Dashboard extends Controller
             'donut_expenses',
             'accounts',
             'latest_incomes',
-            'latest_expenses',
-            'financial_start'
+            'latest_expenses'
         ));
     }
 
@@ -129,15 +123,9 @@ class Dashboard extends Controller
 
     private function getCashFlow()
     {
-        // check and assign year start
-        if (($year_start = $this->today->startOfYear()->format('Y-m-d')) !== $this->financial_start) {
-            $year_start = $this->financial_start;
-        }
-
-        $start = Date::parse(request('start', $year_start));
-        $end = Date::parse(request('end', Date::parse($year_start)->addYear(1)->subDays(1)->format('Y-m-d')));
+        $start = Date::parse(request('start', $this->today->startOfYear()->format('Y-m-d')));
+        $end = Date::parse(request('end', $this->today->endOfYear()->format('Y-m-d')));
         $period = request('period', 'month');
-        $range = request('range', 'custom');
 
         $start_month = $start->month;
         $end_month = $end->month;
@@ -146,14 +134,6 @@ class Dashboard extends Controller
         $labels = array();
 
         $s = clone $start;
-
-        if ($range == 'last_12_months') {
-            $end_month   = 12;
-            $start_month = 0;
-        } elseif ($range == 'custom') {
-            $end_month   = $end->diffInMonths($start);
-            $start_month = 0;
-        }
 
         for ($j = $end_month; $j >= $start_month; $j--) {
             $labels[$end_month - $j] = $s->format('M Y');

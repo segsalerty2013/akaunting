@@ -24,7 +24,6 @@ class Header
         $bills = [];
         $invoices = [];
         $items = [];
-        $items_reminder = [];
         $notifications = 0;
         $company = null;
 
@@ -56,10 +55,6 @@ class Header
                     $items[$data['item_id']] = $data['name'];
                     $notifications++;
                     break;
-                case 'App\Notifications\Common\ItemReminder':
-                    $items_reminder[$data['item_id']] = $data['name'];
-                    $notifications++;
-                    break;
             }
         }
 
@@ -73,7 +68,6 @@ class Header
             'bills' => $bills,
             'invoices' => $invoices,
             'items' => $items,
-            'items_reminder' => $items_reminder,
             'company' => $company,
             'updates' => $updates,
         ]);

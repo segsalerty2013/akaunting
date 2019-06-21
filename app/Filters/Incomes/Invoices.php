@@ -19,27 +19,13 @@ class Invoices extends ModelFilter
         return $this->whereLike('customer_name', $query);
     }
 
-    public function customers($customers)
+    public function customer($customer)
     {
-        return $this->whereIn('customer_id', (array) $customers);
+        return $this->where('customer_id', $customer);
     }
 
-    public function categories($categories)
+    public function status($status)
     {
-        return $this->whereIn('category_id', (array) $categories);
-    }
-
-    public function statuses($statuses)
-    {
-        return $this->whereIn('invoice_status_code', (array) $statuses);
-    }
-
-    public function invoiceDate($date)
-    {
-        $dates = explode('_', $date);
-        $dates[0] .= ' 00:00:00';
-        $dates[1] .= ' 23:59:59';
-
-        return $this->whereBetween('invoiced_at', $dates);
+        return $this->where('invoice_status_code', $status);
     }
 }

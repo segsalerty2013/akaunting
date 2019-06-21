@@ -6,7 +6,7 @@ return [
     'refresh'               => 'Uppdatera',
 
     'steps' => [
-        'requirements'      => 'Snälla, be webbhotellet åtgärda felen!',
+        'requirements'      => 'Vänligen, uppfyll följande krav!',
         'language'          => 'Steg 1/3: Språkval',
         'database'          => 'Steg 2/3: Databasinställningar',
         'settings'          => 'Steg 3/3: Företag och Admin uppgifter',
@@ -19,7 +19,7 @@ return [
     'requirements' => [
         'enabled'           => ':feature måste vara aktiverad!',
         'disabled'          => ':feature måste inaktiveras!',
-        'extension'         => ':extension tillägget måste vara installerad och laddad!',
+        'extension'         => ':extension tillägget måste laddas!',
         'directory'         => ':directory katalogen måste vara skrivbar!',
     ],
 

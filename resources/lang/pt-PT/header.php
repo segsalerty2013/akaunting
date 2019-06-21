@@ -9,8 +9,7 @@ return [
         'overdue_invoices'  => '{1} :count factura vencida|[2,*] :count faturas vencidas',
         'upcoming_bills'    => '{1} :count próxima conta|[2,*] :count próximas contas',
         'items_stock'       => '{1} :count Item não disponível|[2,*] :count Itens não disponíveis',
-        'view_all'          => 'Visualizar tudo'
+        'view_all'          => 'Visualizar todos'
     ],
-    'docs_link'             => 'https://akaunting.com/docs',
 
 ];

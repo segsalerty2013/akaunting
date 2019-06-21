@@ -3,6 +3,7 @@
 return [
 
     'accounts_cash'         => 'Kontanter',
+    'categories_uncat'      => 'Okatergoriserad',
     'categories_deposit'    => 'Insättning',
     'categories_sales'      => 'Försäljning',
     'currencies_usd'        => 'US-Dollar',

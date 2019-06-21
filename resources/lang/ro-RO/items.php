@@ -8,10 +8,7 @@ return [
     'sku'                   => 'Unitate de stoc',
 
     'notification' => [
-        'message'       => [
-            'reminder' => 'You are receiving this email because only :quantity of :name has remained.',
-            'out_of_stock' => 'You are receiving this email because the :name is running out of stock.',
-        ],
+        'message'       => 'Primesti acest e-mail deoarece stocul de :name este pe terminate.',
         'button'        => 'Vezi acum',
     ],
 

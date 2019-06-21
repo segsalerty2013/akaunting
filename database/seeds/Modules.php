@@ -4,6 +4,7 @@ namespace Database\Seeds;
 
 use App\Models\Model;
 use Artisan;
+
 use Illuminate\Database\Seeder;
 
 class Modules extends Seeder

@@ -11,6 +11,5 @@ return [
         'items_stock'       => '{1} :count artikulli jashtë magazinës | [2,*] :count artikuj jashtë magazinës',
         'view_all'          => 'Shiko te Gjitha'
     ],
-    'docs_link'             => 'https://akaunting.com/docs',
 
 ];

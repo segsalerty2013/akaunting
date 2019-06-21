@@ -36,4 +36,5 @@ class ApiCompany
 
         return $next($request);
     }
+
 }

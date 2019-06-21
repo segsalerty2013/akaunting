@@ -5,7 +5,7 @@
 @section('content')
     <!-- Default box -->
     <div class="box box-success">
-        {!! Form::open(['url' => 'common/companies', 'files' => true, 'role' => 'form', 'class' => 'form-loading-button']) !!}
+        {!! Form::open(['url' => 'common/companies', 'files' => true, 'role' => 'form']) !!}
         <div class="box-body">
             {{ Form::textGroup('company_name', trans('general.name'), 'id-card-o') }}
 
@@ -46,9 +46,6 @@
         var text_no = '{{ trans('general.no') }}';
 
         $(document).ready(function(){
-            $('#enabled_1').trigger('click');
-            $('#company_name').focus();
-
             $("#default_currency").select2({
                 placeholder: "{{ trans('general.form.select.field', ['field' => trans_choice('general.currencies', 1)]) }}"
             });

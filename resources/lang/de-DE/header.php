@@ -11,6 +11,5 @@ return [
         'items_stock'       => '{1}:count Artikel ausverkauft|[2,*]:count Artikel ausverkauft',
         'view_all'          => 'Alle anzeigen'
     ],
-    'docs_link'             => 'https://akaunting.com/docs',
 
 ];

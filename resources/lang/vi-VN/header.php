@@ -11,6 +11,5 @@ return [
         'items_stock'       => '{1} :count mục hết hàng | [2, *] :count mục hết hàng',
         'view_all'          => 'Xem tất cả'
     ],
-    'docs_link'             => 'https://akaunting.com/docs',
 
 ];

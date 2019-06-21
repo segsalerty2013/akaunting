@@ -38,9 +38,6 @@ return [
     'numbers'               => 'Número | Números',
     'statuses'              => 'Estado|Estados',
     'others'                => 'Otro|Otros',
-    'contacts'              => 'Contact|Contactos',
-    'reconciliations'       => 'Reconcliación|Reconciliaciones',
-    'developers'            => 'Desarrollador|Desarrolladores',
 
     'dashboard'             => 'Panel de Control',
     'banking'               => 'Bancos',
@@ -84,7 +81,6 @@ return [
     'color'                 => 'Color',
     'save'                  => 'Guardar',
     'cancel'                => 'Cancelar',
-    'loading'               => 'Cargando...',
     'from'                  => 'De 	',
     'to'                    => 'Para',
     'print'                 => 'Imprimir',
@@ -105,27 +101,12 @@ return [
     'partially'             => 'Parcial',
     'partially_paid'        => 'Pagada Parcialmente',
     'export'                => 'Exportar',
-    'finish'                => 'Terminar',
-    'wizard'                => 'Asistente',
-    'skip'                  => 'Omitir',
     'enable'                => 'Activar',
     'disable'               => 'Desactivar',
-    'select_all'            => 'Seleccionar Todo',
-    'unselect_all'          => 'Deseleccionar Todo',
-    'go_to'                 => 'Ir a :name',
-    'created_date'          => 'Fecha de Creación',
-    'period'                => 'Periodo',
-    'start'                 => 'Comenzar',
-    'end'                   => 'Terminar',
-    'clear'                 => 'Limpiar',
-    'difference'            => 'Diferencia',
 
     'title' => [
         'new'               => 'Nuevo :type',
         'edit'              => 'Editar :type',
-        'create'            => 'Crear :type',
-        'send'              => 'Enviar :type',
-        'get'               => 'Obtener :type',
     ],
 
     'form' => [
@@ -137,11 +118,4 @@ return [
         'no_file_selected'  => 'Ningún archivo seleccionado...',
     ],
 
-    'date_range' => [
-        'today' => 'Hoy',
-        'yesterday' => 'Ayer',
-        'last_days' => 'Últimos :day Días',
-        'this_month' => 'Este mes',
-        'last_month' => 'Último mes',
-    ],
 ];

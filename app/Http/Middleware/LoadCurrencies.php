@@ -26,4 +26,5 @@ class LoadCurrencies
 
         return $next($request);
     }
+
 }

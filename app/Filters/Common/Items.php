@@ -16,18 +16,11 @@ class Items extends ModelFilter
 
     public function search($query)
     {
-        $model = $this->where('name', 'LIKE', '%' . $query . '%');
-
-        $or_fields = ['sku', 'description'];
-        foreach ($or_fields as $or_field) {
-            $model->orWhere($or_field, 'LIKE', '%' . $query . '%');
-        }
-
-        return $model;
+        return $this->whereLike('name', $query);
     }
 
-    public function categories($ids)
+    public function category($id)
     {
-        return $this->whereIn('category_id', (array) $ids);
+        return $this->where('category_id', $id);
     }
 }

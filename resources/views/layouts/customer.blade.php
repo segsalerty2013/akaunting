@@ -1,9 +1,7 @@
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ setting('general.default_locale') }}">
     @include('partials.customer.head')
 
     <body class="hold-transition skin-green-light sidebar-mini fixed">
-        @stack('body_start')
-
         <!-- Site wrapper -->
         <div class="wrapper">
             @include('partials.customer.header')
@@ -14,7 +12,5 @@
 
             @include('partials.customer.footer')
         </div>
-
-        @stack('body_end')
     </body>
 </html>

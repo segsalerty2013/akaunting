@@ -5,12 +5,12 @@ return [
     'code'                  => 'Kode',
     'rate'                  => 'Sats',
     'default'               => 'Standardvaluta',
-    'decimal_mark'          => 'Decimaltegn',
-    'thousands_separator'   => 'Tusindetalsseparator',
+    'decimal_mark'          => 'Decimalseparator',
+    'thousands_separator'   => 'Tusinder Separator',
     'precision'             => 'Præcision',
     'symbol' => [
         'symbol'            => 'Symbol',
-        'position'          => 'Symbol position',
+        'position'          => 'Symbol Position',
         'before'            => 'Før beløbet',
         'after'             => 'Efter beløb',
     ]

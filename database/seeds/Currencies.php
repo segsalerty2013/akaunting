@@ -4,6 +4,7 @@ namespace Database\Seeds;
 
 use App\Models\Model;
 use App\Models\Setting\Currency;
+
 use Illuminate\Database\Seeder;
 
 class Currencies extends Seeder

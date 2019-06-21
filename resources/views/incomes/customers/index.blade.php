@@ -33,10 +33,9 @@
             <table class="table table-striped table-hover" id="tbl-customers">
                 <thead>
                     <tr>
-                        <th class="col-md-3">@sortablelink('name', trans('general.name'))</th>
+                        <th class="col-md-5">@sortablelink('name', trans('general.name'))</th>
                         <th class="col-md-3 hidden-xs">@sortablelink('email', trans('general.email'))</th>
                         <th class="col-md-2">@sortablelink('phone', trans('general.phone'))</th>
-                        <th class="col-md-2 hidden-xs">@sortablelink('unpaid', trans('general.unpaid'))</th>
                         <th class="col-md-1 hidden-xs">@sortablelink('enabled', trans_choice('general.statuses', 1))</th>
                         <th class="col-md-1 text-center">{{ trans('general.actions') }}</th>
                     </tr>
@@ -47,7 +46,6 @@
                         <td><a href="{{ url('incomes/customers/' . $item->id) }}">{{ $item->name }}</a></td>
                         <td class="hidden-xs">{{ !empty($item->email) ? $item->email : trans('general.na') }}</td>
                         <td>{{ $item->phone }}</td>
-                        <td>@money($item->unpaid, setting('general.default_currency'), true)</td>
                         <td class="hidden-xs">
                             @if ($item->enabled)
                                 <span class="label label-success">{{ trans('general.enabled') }}</span>
@@ -62,9 +60,6 @@
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <li><a href="{{ url('incomes/customers/' . $item->id) }}">{{ trans('general.show') }}</a></li>
-                                    @permission('read-reports-income-summary')
-                                    <li><a href="{{ url('reports/income-summary?customers[]=' . $item->id) }}">{{ trans_choice('general.reports', 1) }}</a></li>
-                                    @endpermission
                                     <li><a href="{{ url('incomes/customers/' . $item->id . '/edit') }}">{{ trans('general.edit') }}</a></li>
                                     @if ($item->enabled)
                                     <li><a href="{{ route('customers.disable', $item->id) }}">{{ trans('general.disable') }}</a></li>

@@ -1,5 +1,3 @@
-@stack('header_start')
-
 <header class="main-header">
     <!-- Logo -->
     <a href="{{ url('/') }}" class="logo">
@@ -20,8 +18,10 @@
         <!-- Sidebar toggle button-->
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
         </a>
-
         <ul class="add-new nav navbar-nav pull-left">
             <!-- Notifications: style can be found in dropdown.less -->
             <li class="dropdown add-new-menu">
@@ -77,9 +77,6 @@
                                         @permission('create-banking-transfers')
                                         <li><a href="{{ url('banking/transfers/create') }}">{{ trans_choice('general.transfers', 1) }}</a></li>
                                         @endpermission
-                                        @permission('create-banking-reconciliations')
-                                        <li><a href="{{ url('banking/reconciliations/create') }}">{{ trans_choice('general.reconciliations', 1) }}</a></li>
-                                        @endpermission
                                     </ul>
                                 </li>
                             </ul>
@@ -89,12 +86,8 @@
             </li>
         </ul>
 
-        @stack('header_navbar_left')
-
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-                @stack('header_navbar_right')
-
                 @permission('read-notifications')
                 <!-- Notifications: style can be found in dropdown.less -->
                 <li class="dropdown notifications-menu">
@@ -130,13 +123,6 @@
                                     </a>
                                 </li>
                                 @endif
-                                @if (count($items_reminder))
-                                <li>
-                                    <a href="{{ url('auth/users/' . $user->id . '/read-items') }}">
-                                        <i class="fa fa-cubes text-red"></i> {{ trans_choice('header.notifications.items_reminder', count($items_reminder), ['count' => count($items_reminder)]) }}
-                                    </a>
-                                </li>
-                                @endif
                             </ul>
                         </li>
                         <li class="footer"><a href="#">{{ trans('header.notifications.view_all') }}</a></li>
@@ -169,7 +155,7 @@
                 @endpermission
                 <!-- Updates: style can be found in dropdown.less -->
                 <li class="hidden-xs">
-                    <a href="{{ url(trans('header.docs_link')) }}" target="_blank" title="{{ trans('general.help') }}">
+                    <a href="{{ url('https://akaunting.com/docs') }}" target="_blank" title="{{ trans('general.help') }}">
                         <i class="fa fa-life-ring"></i>
                     </a>
                 </li>
@@ -246,5 +232,3 @@
         </div>
     </nav>
 </header>
-
-@stack('header_end')

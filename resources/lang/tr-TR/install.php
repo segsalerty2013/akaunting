@@ -6,7 +6,7 @@ return [
     'refresh'               => 'Yenile',
 
     'steps' => [
-        'requirements'      => 'Sorunları gidermek için hosting firması ile iletişime geçin!',
+        'requirements'      => 'Lütfen, aşağıdaki sistem gereksinimlerini karşılayın!',
         'language'          => 'Adım 1/3 : Dil Seçimi',
         'database'          => 'Adım 2/3 : Veritabanı Ayarları',
         'settings'          => 'Adım 3/3 : Şirket ve Yönetici Bilgileri',
@@ -19,7 +19,7 @@ return [
     'requirements' => [
         'enabled'           => ':feature etkin olmalıdır!',
         'disabled'          => ':feature devre dışı bırakılmalıdır!',
-        'extension'         => ':extension eklendisi kurulmalı ve yüklenmelidir!',
+        'extension'         => ':extension eklentisi yüklenmelidir!',
         'directory'         => ':directory dizini yazılabilir olmalıdır!',
     ],
 

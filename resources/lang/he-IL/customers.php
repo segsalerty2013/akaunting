@@ -7,10 +7,5 @@ return [
 
     'error' => [
         'email'             => 'כתובת הדואר אלקטרוני כבר תפוסה.'
-    ],
-
-    'notification' => [
-        'message'       => ':customer made :amount payment to invoice number :invoice_number.',
-        'button'        => 'Show',
-    ],
+    ]
 ];

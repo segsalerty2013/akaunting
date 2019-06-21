@@ -3,13 +3,13 @@
 namespace App\Http\ViewComposers;
 
 use Illuminate\View\View;
-use App\Traits\Modules as RemoteModules;
+use App\Traits\Modules;
 use Route;
 use App\Models\Module\Module;
 
 class Suggestions
 {
-    use RemoteModules;
+    use Modules;
 
     /**
      * Bind data to the view.

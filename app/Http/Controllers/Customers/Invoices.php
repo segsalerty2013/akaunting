@@ -16,10 +16,8 @@ use App\Traits\DateTime;
 use App\Traits\Uploads;
 use App\Utilities\Modules;
 use File;
-use Illuminate\Http\Request;
 use Image;
 use Storage;
-use SignedUrl;
 
 class Invoices extends Controller
 {
@@ -32,18 +30,12 @@ class Invoices extends Controller
      */
     public function index()
     {
-        $invoices = Invoice::with(['customer', 'status', 'items', 'payments', 'histories'])
-            ->accrued()->where('customer_id', auth()->user()->customer->id)
-            ->collect(['invoice_number'=> 'desc']);
+        $invoices = Invoice::with('status')->accrued()->where('customer_id', auth()->user()->customer->id)->paginate();
 
-        $categories = collect(Category::enabled()->type('income')->orderBy('name')->pluck('name', 'id'));
+        $status = collect(InvoiceStatus::all()->pluck('name', 'code'))
+            ->prepend(trans('general.all_type', ['type' => trans_choice('general.statuses', 2)]), '');
 
-        $statuses = collect(InvoiceStatus::get()->each(function ($item) {
-            $item->name = trans('invoices.status.' . $item->code);
-            return $item;
-        })->pluck('name', 'code'));
-
-        return view('customers.invoices.index', compact('invoices', 'categories', 'statuses'));
+        return view('customers.invoices.index', compact('invoices', 'status'));
     }
 
     /**
@@ -55,15 +47,25 @@ class Invoices extends Controller
      */
     public function show(Invoice $invoice)
     {
-        $accounts = Account::enabled()->orderBy('name')->pluck('name', 'id');
+        $paid = 0;
 
-        $currencies = Currency::enabled()->orderBy('name')->pluck('name', 'code')->toArray();
+        foreach ($invoice->payments as $item) {
+            $item->default_currency_code = $invoice->currency_code;
+
+            $paid += $item->getDynamicConvertedAmount();
+        }
+
+        $invoice->paid = $paid;
+
+        $accounts = Account::enabled()->pluck('name', 'id');
+
+        $currencies = Currency::enabled()->pluck('name', 'code')->toArray();
 
         $account_currency_code = Account::where('id', setting('general.default_account'))->pluck('currency_code')->first();
 
-        $customers = Customer::enabled()->orderBy('name')->pluck('name', 'id');
+        $customers = Customer::enabled()->pluck('name', 'id');
 
-        $categories = Category::enabled()->type('income')->orderBy('name')->pluck('name', 'id');
+        $categories = Category::enabled()->type('income')->pluck('name', 'id');
 
         $payment_methods = Modules::getPaymentMethods();
 
@@ -81,7 +83,9 @@ class Invoices extends Controller
     {
         $invoice = $this->prepareInvoice($invoice);
 
-        return view($invoice->template_path, compact('invoice'));
+        $logo = $this->getLogo();
+
+        return view($invoice->template_path, compact('invoice', 'logo'));
     }
 
     /**
@@ -95,10 +99,9 @@ class Invoices extends Controller
     {
         $invoice = $this->prepareInvoice($invoice);
 
-        $currency_style = true;
+        $logo = $this->getLogo();
 
-        $view = view($invoice->template_path, compact('invoice', 'currency_style'))->render();
-        $html = mb_convert_encoding($view, 'HTML-ENTITIES');
+        $html = view($invoice->template_path, compact('invoice', 'logo'))->render();
 
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($html);
@@ -115,15 +118,9 @@ class Invoices extends Controller
         $paid = 0;
 
         foreach ($invoice->payments as $item) {
-            $amount = $item->amount;
+            $item->default_currency_code = $invoice->currency_code;
 
-            if ($invoice->currency_code != $item->currency_code) {
-                $item->default_currency_code = $invoice->currency_code;
-
-                $amount = $item->getDynamicConvertedAmount();
-            }
-
-            $paid += $amount;
+            $paid += $item->getDynamicConvertedAmount();
         }
 
         $invoice->paid = $paid;
@@ -135,53 +132,38 @@ class Invoices extends Controller
         return $invoice;
     }
 
-    public function link(Invoice $invoice, Request $request)
+    protected function getLogo()
     {
-        if (empty($invoice)) {
-            redirect()->route('login');
+        $logo = '';
+
+        $media_id = setting('general.company_logo');
+
+        if (setting('general.invoice_logo')) {
+            $media_id = setting('general.invoice_logo');
         }
 
-        $paid = 0;
+        $media = Media::find($media_id);
 
-        foreach ($invoice->payments as $item) {
-            $amount = $item->amount;
+        if (!empty($media)) {
+            $path = Storage::path($media->getDiskPath());
 
-            if ($invoice->currency_code != $item->currency_code) {
-                $item->default_currency_code = $invoice->currency_code;
-
-                $amount = $item->getDynamicConvertedAmount();
+            if (!is_file($path)) {
+                return $logo;
             }
-
-            $paid += $amount;
+        } else {
+            $path = asset('public/img/company.png');
         }
 
-        $invoice->paid = $paid;
+        $image = Image::make($path)->encode()->getEncoded();
 
-        $accounts = Account::enabled()->pluck('name', 'id');
-
-        $currencies = Currency::enabled()->pluck('name', 'code')->toArray();
-
-        $account_currency_code = Account::where('id', setting('general.default_account'))->pluck('currency_code')->first();
-
-        $customers = Customer::enabled()->pluck('name', 'id');
-
-        $categories = Category::enabled()->type('income')->pluck('name', 'id');
-
-        $payment_methods = Modules::getPaymentMethods();
-
-        $payment_actions = [];
-
-        foreach ($payment_methods as $payment_method_key => $payment_method_value) {
-            $codes = explode('.', $payment_method_key);
-
-            if (!isset($payment_actions[$codes[0]])) {
-                $payment_actions[$codes[0]] = SignedUrl::sign(url('signed/invoices/' . $invoice->id . '/' . $codes[0]), 1);
-            }
+        if (empty($image)) {
+            return $logo;
         }
 
-        $print_action = SignedUrl::sign(route('signed.invoices.print', $invoice->id), 1);
-        $pdf_action = SignedUrl::sign(route('signed.invoices.pdf', $invoice->id), 1);
+        $extension = File::extension($path);
 
-        return view('customers.invoices.link', compact('invoice', 'accounts', 'currencies', 'account_currency_code', 'customers', 'categories', 'payment_methods', 'payment_actions', 'print_action', 'pdf_action'));
+        $logo = 'data:image/' . $extension . ';base64,' . base64_encode($image);
+
+        return $logo;
     }
 }

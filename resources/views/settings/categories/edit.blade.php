@@ -8,8 +8,7 @@
         {!! Form::model($category, [
             'method' => 'PATCH',
             'url' => ['settings/categories', $category->id],
-            'role' => 'form',
-            'class' => 'form-loading-button'
+            'role' => 'form'
         ]) !!}
 
         <div class="box-body">
@@ -22,7 +21,6 @@
                 {{ Form::selectGroup('type', trans_choice('general.types', 1), 'bars', $types) }}
             @endif
 
-            @stack('color_input_start')
             <div class="form-group col-md-6 required {{ $errors->has('color') ? 'has-error' : ''}}">
                 {!! Form::label('color', trans('general.color'), ['class' => 'control-label']) !!}
                 <div  id="category-color-picker" class="input-group colorpicker-component">
@@ -31,7 +29,6 @@
                 </div>
                 {!! $errors->first('color', '<p class="help-block">:message</p>') !!}
             </div>
-            @stack('color_input_end')
 
             {{ Form::radioGroup('enabled', trans('general.enabled')) }}
         </div>

@@ -6,7 +6,7 @@ return [
     'refresh'               => 'Oppfrisk',
 
     'steps' => [
-        'requirements'      => 'Vennligst anmod din tjenestetilbyder om å rette opp problemene!',
+        'requirements'      => 'Du må oppfyll følgende avhengigheter.',
         'language'          => 'Steg 1/3: Språkvalg',
         'database'          => 'Steg 2/3: Databaseoppsett',
         'settings'          => 'Steg 3/3: Foretak- og administratordetaljer',
@@ -19,7 +19,7 @@ return [
     'requirements' => [
         'enabled'           => ':feature må være aktivert.',
         'disabled'          => ':feature må være deaktivert.',
-        'extension'         => 'Utvidelsen :extension må installeres og aktiveres!',
+        'extension'         => ':extension utvidelse må være lastet.',
         'directory'         => 'Mappen :directory må være skrivbar.',
     ],
 

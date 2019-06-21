@@ -12,15 +12,15 @@ return [
     'quantity'          => 'تعداد',
     'price'             => 'قيمت',
     'sub_total'         => 'جمع کل',
-    'discount'          => 'تخفیف',
+    'discount'          => 'Discount',
     'tax_total'         => 'مجموع مالیات',
     'total'             => 'مجموع',
 
     'item_name'         => 'نام آیتم | نام آیتم ها',
 
     'show_discount'     => ':discount% Discount',
-    'add_discount'      => 'افزودن تخفیف',
-    'discount_desc'     => 'از جمع کل',
+    'add_discount'      => 'Add Discount',
+    'discount_desc'     => 'of subtotal',
 
     'payment_due'       => 'سررسید پرداخت',
     'paid'              => 'پرداخت شده',
@@ -31,7 +31,6 @@ return [
     'mark_sent'         => 'ارسال شده',
     'download_pdf'      => 'دانلود PDF',
     'send_mail'         => 'ارسال ایمیل',
-    'all_invoices'      => 'Login to view all invoices',
 
     'status' => [
         'draft'         => 'پیش‌ نویس',
@@ -46,18 +45,6 @@ return [
         'email_sent'     => 'فاکتور با موفقت ارسال شده است!',
         'marked_sent'    => 'فاکتور با موفقت ارسال شده است!',
         'email_required' => 'هیچ آدرس ایمیل برای این مشتری موجود نیست!',
-        'draft'          => 'This is a <b>DRAFT</b> invoice and will be reflected to charts after it gets sent.',
-
-        'status' => [
-            'created'   => 'Created on :date',
-            'send'      => [
-                'draft'     => 'ارسال نشده',
-                'sent'      => 'Sent on :date',
-            ],
-            'paid'      => [
-                'await'     => 'در انتظار پرداخت',
-            ],
-        ],
     ],
 
     'notification' => [

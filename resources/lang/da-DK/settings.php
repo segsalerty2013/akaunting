@@ -11,8 +11,6 @@ return [
     ],
     'localisation' => [
         'tab'               => 'Lokalisering',
-        'financial_start'   => 'Regnskabsårets Start',
-        'timezone'          => 'Tidszone',
         'date' => [
             'format'        => 'Datoformat',
             'separator'     => 'Datoseparator',
@@ -22,6 +20,7 @@ return [
             'slash'         => 'Skråstreg (/)',
             'space'         => 'Mellemrum ( )',
         ],
+        'timezone'          => 'Tidszone',
         'percent' => [
             'title'         => 'Procent (%) Position',
             'before'        => 'Før nummer',
@@ -34,16 +33,6 @@ return [
         'digit'             => 'Antal cifre',
         'next'              => 'Næste nummer',
         'logo'              => 'Logo',
-        'custom'            => 'Tilpasset',
-        'item_name'         => 'Varenavn',
-        'item'              => 'Varer',
-        'product'           => 'Produkter',
-        'service'           => 'Services',
-        'price_name'        => 'Pris navn',
-        'price'             => 'Pris',
-        'rate'              => 'Sats',
-        'quantity_name'     => 'Mængde navn',
-        'quantity'          => 'Antal',
     ],
     'default' => [
         'tab'               => 'Standarder',
@@ -77,16 +66,14 @@ return [
         'bill_days'         => 'Send før forfalds dage',
         'cron_command'      => 'Cron kommando',
         'schedule_time'     => 'Timer at køre',
-        'send_item_reminder'=> 'Send vare påmindelse',
-        'item_stocks'       => 'Send når varen er på lager',
     ],
     'appearance' => [
         'tab'               => 'Udseende',
-        'theme'             => 'Tema',
+        'theme'             => 'Theme',
         'light'             => 'Lys',
         'dark'              => 'Mørk',
         'list_limit'        => 'Poster pr. side',
-        'use_gravatar'      => 'Brug Gravatar',
+        'use_gravatar'      => 'Bruge Gravatar',
     ],
     'system' => [
         'tab'               => 'System',

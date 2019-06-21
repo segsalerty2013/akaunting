@@ -67,20 +67,4 @@ return [
 	'override' => [
 		
 	],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Required Extra Columns
-    |--------------------------------------------------------------------------
-    |
-    | The list of columns required to be set up
-    |
-    | Sample:
-    |   "user_id",
-    |   "tenant_id",
-    |
-    */
-    'required_extra_columns' => [
-        'company_id'
-    ],
 ];

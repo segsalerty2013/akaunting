@@ -3,12 +3,12 @@
 namespace App\Http\Requests\Module;
 
 use App\Http\Requests\Request;
-use App\Traits\Modules as RemoteModules;
+use App\Traits\Modules;
 use Illuminate\Validation\Factory as ValidationFactory;
 
 class Module extends Request
 {
-    use RemoteModules;
+    use Modules;
 
     public function __construct(ValidationFactory $validation)
     {

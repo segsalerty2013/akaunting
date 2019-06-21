@@ -126,8 +126,8 @@ class Currencies extends Controller
      */
     public function update(Currency $currency, Request $request)
     {
-        // Check if we can disable or change the code
-        if (!$request['enabled'] || ($currency->code != $request['code'])) {
+        // Check if we can disable it
+        if (!$request['enabled']) {
             $relationships = $this->countRelationships($currency, [
                 'accounts' => 'accounts',
                 'customers' => 'customers',
@@ -162,7 +162,7 @@ class Currencies extends Controller
 
             return redirect('settings/currencies');
         } else {
-            $message = trans('messages.warning.disable_code', ['name' => $currency->name, 'text' => implode(', ', $relationships)]);
+            $message = trans('messages.warning.disabled', ['name' => $currency->name, 'text' => implode(', ', $relationships)]);
 
             flash($message)->warning();
 
@@ -222,6 +222,8 @@ class Currencies extends Controller
             $message = trans('messages.warning.disabled', ['name' => $currency->name, 'text' => implode(', ', $relationships)]);
 
             flash($message)->warning();
+
+            return redirect()->route('currencies.index');
         }
 
         return redirect()->route('currencies.index');
@@ -268,15 +270,16 @@ class Currencies extends Controller
     {
         $json = new \stdClass();
 
-        $code = request('code');
+        $account_id = request('account_id');
 
-        // Get currency object
-        $currency = Currency::where('code', $code)->first();
+        if ($account_id) {
+            $currencies = Currency::enabled()->pluck('name', 'code')->toArray();
 
-        // it should be integer for amount mask
-        $currency->precision = (int) $currency->precision;
+            $json->currency_code = Account::where('id', $account_id)->pluck('currency_code')->first();
+            $json->currency_name = $currencies[$json->currency_code];
+        }
 
-        return response()->json($currency);
+        return response()->json($json);
     }
 
     public function config()
@@ -287,8 +290,6 @@ class Currencies extends Controller
 
         if ($code) {
             $currency = config('money.' . $code);
-            
-            $currency['rate'] = isset($currency['rate']) ? $currency['rate'] : null;
             $currency['symbol_first'] = $currency['symbol_first'] ? 1 : 0;
 
             $json = (object) $currency;

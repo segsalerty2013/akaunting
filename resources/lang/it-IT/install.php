@@ -6,7 +6,7 @@ return [
     'refresh'               => 'Aggiorna',
 
     'steps' => [
-        'requirements'      => 'Per favore, chiedi al tuo fornitore di hosting di correggere gli errori!',
+        'requirements'      => 'Per favore, segui i seguenti requisiti!',
         'language'          => 'Passo 1/3: Selezione della lingua',
         'database'          => 'Passo 2/3: Configurazione del Database',
         'settings'          => 'Passo 3/3: Azienda e dettagli Amministrazione',
@@ -19,7 +19,7 @@ return [
     'requirements' => [
         'enabled'           => ':feature deve essere abilitata!',
         'disabled'          => ':feature deve essere disabilitata!',
-        'extension'         => ':extension estensione deve essere installata e caricata!',
+        'extension'         => 'l\'esetnsione :extension deve essere caricata!',
         'directory'         => 'la cartella :directory deve essere scrivibile!',
     ],
 

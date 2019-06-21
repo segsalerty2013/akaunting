@@ -26,7 +26,7 @@ class BillTotal extends Request
         return [
             'bill_id' => 'required|integer',
             'name' => 'required|string',
-            'amount' => 'required|amount',
+            'amount' => 'required',
             'sort_order' => 'required|integer',
         ];
     }

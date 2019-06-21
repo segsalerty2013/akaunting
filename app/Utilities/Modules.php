@@ -20,11 +20,7 @@ class Modules
 
         $payment_methods = Cache::get($cache_admin);
 
-        $customer = true;
-
-        if (auth()->user()) {
-            $customer = auth()->user()->customer;
-        }
+        $customer = auth()->user()->customer;
 
         if ($customer && $type != 'all') {
             $payment_methods = Cache::get($cache_customer);

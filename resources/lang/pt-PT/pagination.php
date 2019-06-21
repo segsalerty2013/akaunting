@@ -3,7 +3,7 @@
 return [
 
     'previous'              => '&laquo; Anterior',
-    'next'                  => 'Seguinte &raquo;',
+    'next'                  => 'Próxima &raquo;',
     'showing'               => 'A mostrar :first de :last de :total :type',
 
 ];

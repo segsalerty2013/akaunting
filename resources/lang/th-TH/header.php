@@ -11,6 +11,5 @@ return [
         'items_stock'       => '{1} :count รายการที่หมดสต็อก|[2,*] :count รายการที่หมดสต็อก',
         'view_all'          => 'แสดงทั้งหมด'
     ],
-    'docs_link'             => 'https://akaunting.com',
 
 ];

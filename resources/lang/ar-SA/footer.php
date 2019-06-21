@@ -2,9 +2,8 @@
 
 return [
 
-    'version'               => 'إصدار',
+    'version'               => 'اصدار',
     'powered'               => 'بواسطة أكاونتينج',
-    'link'                  => 'https://akaunting.com',
-    'software'              => 'برنامج محاسبي مجاني',
+    'software'              => 'برنامج محاسبى مجانى',
 
 ];

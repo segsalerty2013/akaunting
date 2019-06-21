@@ -1,9 +1,7 @@
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ setting('general.default_locale') }}">
     @include('partials.admin.head')
 
     <body class="hold-transition {{ setting('general.admin_theme', 'skin-green-light') }} sidebar-mini fixed">
-        @stack('body_start')
-
         <!-- Site wrapper -->
         <div class="wrapper">
             @include('partials.admin.header')
@@ -14,7 +12,5 @@
 
             @include('partials.admin.footer')
         </div>
-
-        @stack('body_end')
     </body>
 </html>

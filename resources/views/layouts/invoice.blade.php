@@ -1,11 +1,11 @@
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ setting('general.default_locale') }}">
     @include('partials.invoice.head')
 
     <body onload="window.print();">
-        @stack('body_start')
-
-        @yield('content')
-
-        @stack('body_end')
+        <!-- Content Wrapper. Contains page content -->
+        <div class="wrapper" style="margin-left: 0; page-break-after: always;">
+            @yield('content')
+        </div>
+        <!-- /.content-wrapper -->
     </body>
 </html>

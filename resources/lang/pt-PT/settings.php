@@ -11,8 +11,6 @@ return [
     ],
     'localisation' => [
         'tab'               => 'Localização',
-        'financial_start'   => 'Início do ano fiscal',
-        'timezone'          => 'Fuso Horário',
         'date' => [
             'format'        => 'Formato da Data',
             'separator'     => 'Separador da Data',
@@ -22,6 +20,7 @@ return [
             'slash'         => 'Barra (/)',
             'space'         => 'Espaço ( )',
         ],
+        'timezone'          => 'Fuso Horário',
         'percent' => [
             'title'         => 'Posição do símbolo de percentagem (%)',
             'before'        => 'Antes do Número',
@@ -34,16 +33,6 @@ return [
         'digit'             => 'Quantidade de dígitos',
         'next'              => 'Próximo Número',
         'logo'              => 'Logotipo',
-        'custom'            => 'Personalizado',
-        'item_name'         => 'Nome do Item',
-        'item'              => 'Itens',
-        'product'           => 'Produtos',
-        'service'           => 'Serviços',
-        'price_name'        => 'Nome do Preço',
-        'price'             => 'Preço',
-        'rate'              => 'Taxa',
-        'quantity_name'     => 'Nome de Quantidade',
-        'quantity'          => 'Quantidade',
     ],
     'default' => [
         'tab'               => 'Padrões',
@@ -73,12 +62,10 @@ return [
         'tab'               => 'Agendamento',
         'send_invoice'      => 'Enviar lembrete de faturas',
         'invoice_days'      => 'Enviar após dias de vencimento',
-        'send_bill'         => 'Enviar lembrete de Contas',
+        'send_bill'         => 'Enviar lembrete de Conta',
         'bill_days'         => 'Enviar antes de vencer',
         'cron_command'      => 'Comando Cron',
         'schedule_time'     => 'Iniciar Cron',
-        'send_item_reminder'=> 'Enviar lembrete de Item',
-        'item_stocks'       => 'Enviar Quando Item Disponível',
     ],
     'appearance' => [
         'tab'               => 'Aparência',

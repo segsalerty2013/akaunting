@@ -4,6 +4,7 @@ namespace Database\Seeds;
 
 use App\Models\Model;
 use App\Models\Setting\Category;
+
 use Illuminate\Database\Seeder;
 
 class Categories extends Seeder

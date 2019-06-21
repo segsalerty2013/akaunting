@@ -9,8 +9,7 @@
                 'method' => 'PATCH',
                 'url' => ['common/companies', $company->id],
                 'files' => true,
-                'role' => 'form',
-                'class' => 'form-loading-button'
+                'role' => 'form'
             ]) !!}
 
             <div class="box-body">
@@ -63,30 +62,31 @@
                 text  : '{{ trans('general.form.select.file') }}',
                 style : 'btn-default',
                 @if($company->company_logo)
-                placeholder : '{{ $company->company_logo->basename }}'
+                placeholder : '<?php echo $company->company_logo->basename; ?>'
                 @else
                 placeholder : '{{ trans('general.form.no_file_selected') }}'
                 @endif
             });
 
             @if($company->company_logo)
-            $.ajax({
-                url: '{{ url('uploads/' . $company->company_logo->id . '/show') }}',
-                type: 'GET',
-                data: {column_name: 'attachment'},
-                dataType: 'JSON',
-                success: function(json) {
-                    if (json['success']) {
-                        $('.fancy-file').after(json['html']);
-                    }
-                }
-            });
+                attachment_html  = '<span class="attachment">';
+                attachment_html += '    <a href="{{ url('uploads/' . $company->company_logo->id . '/download') }}">';
+                attachment_html += '        <span id="download-attachment" class="text-primary">';
+                attachment_html += '            <i class="fa fa-file-{{ $company->company_logo->aggregate_type }}-o"></i> {{ $company->company_logo->basename }}';
+                attachment_html += '        </span>';
+                attachment_html += '    </a>';
+                attachment_html += '    {!! Form::open(['id' => 'attachment-' . $company->company_logo->id, 'method' => 'DELETE', 'url' => [url('uploads/' . $company->company_logo->id)], 'style' => 'display:inline']) !!}';
+                attachment_html += '    <a id="remove-attachment" href="javascript:void();">';
+                attachment_html += '        <span class="text-danger"><i class="fa fa fa-times"></i></span>';
+                attachment_html += '    </a>';
+                attachment_html += '    {!! Form::close() !!}';
+                attachment_html += '</span>';
 
-            @permission('delete-common-uploads')
-            $(document).on('click', '#remove-attachment', function (e) {
-                confirmDelete("#attachment-{!! $company->company_logo->id !!}", "{!! trans('general.attachment') !!}", "{!! trans('general.delete_confirm', ['name' => '<strong>' . $company->company_logo->basename . '</strong>', 'type' => strtolower(trans('general.attachment'))]) !!}", "{!! trans('general.cancel') !!}", "{!! trans('general.delete')  !!}");
-            });
-            @endpermission
+                $('.fancy-file .fake-file').append(attachment_html);
+
+                $(document).on('click', '#remove-attachment', function (e) {
+                    confirmDelete("#attachment-{!! $company->company_logo->id !!}", "{!! trans('general.attachment') !!}", "{!! trans('general.delete_confirm', ['name' => '<strong>' . $company->company_logo->basename . '</strong>', 'type' => strtolower(trans('general.attachment'))]) !!}", "{!! trans('general.cancel') !!}", "{!! trans('general.delete')  !!}");
+                });
             @endif
         });
     </script>

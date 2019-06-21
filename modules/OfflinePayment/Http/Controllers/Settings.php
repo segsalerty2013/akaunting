@@ -12,7 +12,6 @@ use Modules\OfflinePayment\Http\Requests\SettingDelete as DRequest;
 
 class Settings extends Controller
 {
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -67,7 +66,7 @@ class Settings extends Controller
 
         Artisan::call('cache:clear');
 
-        return redirect()->route('offlinepayment.edit');
+        return redirect('apps/offlinepayment/settings');
     }
 
     /**

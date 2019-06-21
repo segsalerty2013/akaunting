@@ -23,15 +23,8 @@ class Role extends FormRequest
      */
     public function rules()
     {
-        // Check if store or update
-        if ($this->getMethod() == 'PATCH') {
-            $id = $this->role->getAttribute('id');
-        } else {
-            $id = null;
-        }
-
         return [
-            'name' => 'required|string|unique:roles,name,' . $id,
+            'name' => 'required|string',
             'display_name' => 'required|string',
             'permissions' => 'required'
         ];

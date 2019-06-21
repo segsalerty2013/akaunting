@@ -11,6 +11,5 @@ return [
         'items_stock'       => '{1} :count objekt i lager | [2 *]:count objekt i lager',
         'view_all'          => 'Visa alla'
     ],
-    'docs_link'             => 'https://akaunting.com/docs',
 
 ];

@@ -100,10 +100,8 @@ class Vendors extends Controller
 
         $limit = request('limit', setting('general.list_limit', '25'));
         $transactions = $this->paginate($items->merge($bill_payments)->sortByDesc('paid_at'), $limit);
-        $bills = $this->paginate($bills->sortByDesc('paid_at'), $limit);
-        $payments = $this->paginate($payments->sortByDesc('paid_at'), $limit);
 
-        return view('expenses.vendors.show', compact('vendor', 'counts', 'amounts', 'transactions', 'bills', 'payments'));
+        return view('expenses.vendors.show', compact('vendor', 'counts', 'amounts', 'transactions'));
     }
 
     /**
@@ -306,26 +304,21 @@ class Vendors extends Controller
 
     public function currency()
     {
-        $vendor_id = (int) request('vendor_id');
-
-        if (empty($vendor_id)) {
-            return response()->json([]);
-        }
+        $vendor_id = request('vendor_id');
 
         $vendor = Vendor::find($vendor_id);
 
-        if (empty($vendor)) {
-            return response()->json([]);
+        $currency_code = $vendor->currency_code;
+
+        $currency = false;
+        $currencies = Currency::enabled()->pluck('name', 'code')->toArray();
+
+        if (array_key_exists($currency_code, $currencies)) {
+            $currency = true;
         }
 
-        $currency_code = setting('general.default_currency');
-
-        if (isset($vendor->currency_code)) {
-            $currencies = Currency::enabled()->pluck('name', 'code')->toArray();
-
-            if (array_key_exists($vendor->currency_code, $currencies)) {
-                $currency_code = $vendor->currency_code;
-            }
+        if (!$currency) { 
+            $currency_code = setting('general.default_currency');
         }
 
         // Get currency object
@@ -333,12 +326,6 @@ class Vendors extends Controller
 
         $vendor->currency_code = $currency_code;
         $vendor->currency_rate = $currency->rate;
-
-        $vendor->thousands_separator = $currency->thousands_separator;
-        $vendor->decimal_mark = $currency->decimal_mark;
-        $vendor->precision = (int) $currency->precision;
-        $vendor->symbol_first = $currency->symbol_first;
-        $vendor->symbol = $currency->symbol;
 
         return response()->json($vendor);
     }

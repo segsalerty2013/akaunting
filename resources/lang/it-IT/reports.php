@@ -7,24 +7,24 @@ return [
     'this_quarter'          => 'Trimestre Corrente',
     'previous_quarter'      => 'Trimestre precedente',
     'last_12_months'        => 'Ultimi 12 mesi',
-    'profit_loss'           => 'Profitti e perdite',
-    'gross_profit'          => 'Utile lordo',
-    'net_profit'            => 'Utile netto',
-    'total_expenses'        => 'Totale spese',
+    'profit_loss'           => 'Profit & Loss',
+    'gross_profit'          => 'Gross Profit',
+    'net_profit'            => 'Net Profit',
+    'total_expenses'        => 'Total Expenses',
     'net'                   => 'NET',
 
     'summary' => [
         'income'            => 'Riepilogo di reddito',
         'expense'           => 'Riepilogo spese',
         'income_expense'    => 'Reddito vs Spese',
-        'tax'               => 'Riepilogo fiscale',
+        'tax'               => 'Tax Summary',
     ],
 
     'quarter' => [
-        '1'                 => 'Gen-Mar',
-        '2'                 => 'Apr-Giu',
-        '3'                 => 'Lug-Set',
-        '4'                 => 'Ott-Dic',
+        '1'                 => 'Jan-Mar',
+        '2'                 => 'Apr-Jun',
+        '3'                 => 'Jul-Sep',
+        '4'                 => 'Oct-Dec',
     ],
 
 ];

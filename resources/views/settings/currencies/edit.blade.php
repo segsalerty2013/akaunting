@@ -8,8 +8,7 @@
         {!! Form::model($currency, [
             'method' => 'PATCH',
             'url' => ['settings/currencies', $currency->id],
-            'role' => 'form',
-            'class' => 'form-loading-button'
+            'role' => 'form'
         ]) !!}
 
         <div class="box-body">

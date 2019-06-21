@@ -5,8 +5,9 @@ namespace Database\Seeds;
 use App\Models\Model;
 use App\Models\Auth\User;
 use App\Models\Common\Company;
-use Date;
+use Jenssegers\Date\Date;
 use Illuminate\Database\Seeder;
+use Setting;
 
 class TestCompany extends Seeder
 {
@@ -41,21 +42,14 @@ class TestCompany extends Seeder
             Company::create($row);
         }
 
-        setting()->setExtraColumns(['company_id' => '1']);
-        setting()->set([
-            'general.company_name'              => 'Test Inc.',
-            'general.company_email'             => 'info@test.com',
-            'general.company_address'           => 'New Street 1254',
-            'general.financial_start'           => '01-01',
-            'general.default_currency'          => 'USD',
-            'general.default_account'           => '1',
-            'general.default_payment_method'    => 'offlinepayment.cash.1',
-            'general.schedule_bill_days'        => '10,5,3,1',
-            'general.schedule_invoice_days'     => '1,3,5,10',
-            'general.send_invoice_reminder'     => true,
-            'general.send_bill_reminder'        => true,
-        ]);
-        setting()->save();
+        Setting::setExtraColumns(['company_id' => '1']);
+        Setting::set('general.company_name', 'Test Inc.');
+        Setting::set('general.company_email', 'info@test.com');
+        Setting::set('general.company_address', 'New Street 1254');
+        Setting::set('general.default_currency', 'USD');
+        Setting::set('general.default_account', '1');
+        Setting::set('general.default_payment_method', 'offlinepayment.cash.1');
+        Setting::save();
 
         $this->command->info('Test company created.');
     }

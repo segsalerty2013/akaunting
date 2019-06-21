@@ -11,68 +11,34 @@
     @include('partials.modules.bar')
 
     <div class="row">
-        @if ($pre_sale)
-        <div class="col-md-12">
-            <div class="content-header no-padding-left">
-                <h3>{{ trans('modules.pre_sale') }}</h3>
-            </div>
-
-            @if ($pre_sale->data)
-                @foreach ($pre_sale->data as $module)
-                    @include('partials.modules.pre_sale')
-                @endforeach
-            @else
-                @include('partials.modules.no_apps')
-            @endif
-        </div>
-        @endif
-
-        @if ($paid)
         <div class="col-md-12">
             <div class="content-header no-padding-left">
                 <h3>{{ trans('modules.top_paid') }}</h3>
             </div>
 
-            @if ($paid->data)
-                @foreach ($paid->data as $module)
-                    @include('partials.modules.item')
-                @endforeach
-            @else
-                @include('partials.modules.no_apps')
-            @endif
+            @foreach ($paid as $module)
+                @include('partials.modules.item')
+            @endforeach
         </div>
-        @endif
 
-        @if ($new)
         <div class="col-md-12">
             <div class="content-header no-padding-left">
                 <h3>{{ trans('modules.new') }}</h3>
             </div>
 
-            @if ($new->data)
-                @foreach ($new->data as $module)
-                    @include('partials.modules.item')
-                @endforeach
-            @else
-                @include('partials.modules.no_apps')
-            @endif
+            @foreach ($new as $module)
+                @include('partials.modules.item')
+            @endforeach
         </div>
-        @endif
 
-        @if ($free)
         <div class="col-md-12">
             <div class="content-header no-padding-left">
                 <h3>{{ trans('modules.top_free') }}</h3>
             </div>
 
-            @if ($free->data)
-                @foreach ($free->data as $module)
-                    @include('partials.modules.item')
-                @endforeach
-            @else
-                @include('partials.modules.no_apps')
-            @endif
+            @foreach ($free as $module)
+                @include('partials.modules.item')
+            @endforeach
         </div>
-        @endif
     </div>
 @endsection

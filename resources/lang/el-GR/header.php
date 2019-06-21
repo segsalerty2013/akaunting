@@ -11,6 +11,5 @@ return [
         'items_stock'       => '{1} :count προϊόν έχει εξαντληθεί|[2,*] :count έχουν εξαντληθεί',
         'view_all'          => 'Προβολή Όλων'
     ],
-    'docs_link'             => 'https://akaunting.com/docs',
 
 ];

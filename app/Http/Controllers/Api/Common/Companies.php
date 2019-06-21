@@ -55,11 +55,10 @@ class Companies extends ApiController
      */
     public function store(Request $request)
     {
-        $company = Company::create($request->all());
-
         // Clear settings
         setting()->forgetAll();
-        setting()->setExtraColumns(['company_id' => $company->id]);
+
+        $company = Company::create($request->all());
 
         // Create settings
         setting()->set([
@@ -70,9 +69,11 @@ class Companies extends ApiController
             'general.default_locale' => $request->get('default_locale', 'en-GB'),
         ]);
 
+        setting()->setExtraColumns(['company_id' => $company->id]);
+
         setting()->save();
 
-        return $this->response->created(url('api/companies/' . $company->id));
+        return $this->response->created(url('api/companies/'.$company->id));
     }
 
     /**

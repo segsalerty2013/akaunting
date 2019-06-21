@@ -1,4 +1,4 @@
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ setting('general.default_locale') }}">
     @include('partials.admin.head')
 
     @push('css')
@@ -7,10 +7,6 @@
     @endpush
 
     <body onload="window.print();" class="print-width">
-        @stack('body_start')
-
         @yield('content')
-
-        @stack('body_end')
     </body>
 </html>
