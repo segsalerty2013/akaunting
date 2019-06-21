@@ -12,15 +12,15 @@ return [
     'quantity'          => 'Количество',
     'price'             => 'Цена',
     'sub_total'         => 'Междинна сума',
-    'discount'          => 'Отстъпка',
+    'discount'          => 'Discount',
     'tax_total'         => 'Общо данък',
     'total'             => 'Общо',
 
     'item_name'         => 'Име на артикул | Имена на артикули',
 
-    'show_discount'     => ':discount% отстъпка',
-    'add_discount'      => 'Добави отстъпка',
-    'discount_desc'     => 'на междинна сума',
+    'show_discount'     => ':discount% Discount',
+    'add_discount'      => 'Add Discount',
+    'discount_desc'     => 'of subtotal',
 
     'payment_due'       => 'Дължимото плащане',
     'paid'              => 'Платен',
@@ -31,7 +31,6 @@ return [
     'mark_sent'         => 'Маркирай като изпратено',
     'download_pdf'      => 'Изтегляне на PDF',
     'send_mail'         => 'Изпращане на имейл',
-    'all_invoices'      => 'Вход за да видите всички фактури',
 
     'status' => [
         'draft'         => 'Чернова',
@@ -46,18 +45,6 @@ return [
         'email_sent'     => 'И-мейла беше изпратен успешно!',
         'marked_sent'    => 'Фактурата беше изпратена успешно!',
         'email_required' => 'Няма имейл адрес за този клиент!',
-        'draft'          => 'Това е <b>ЧЕРНОВА</b> фактура и няма да бъде отразена в графиките след като бъде изпратена.',
-
-        'status' => [
-            'created'   => 'Създадено на :date',
-            'send'      => [
-                'draft'     => 'Не е изпратено',
-                'sent'      => 'Изпратено на :date',
-            ],
-            'paid'      => [
-                'await'     => 'Очакващо плащане',
-            ],
-        ],
     ],
 
     'notification' => [

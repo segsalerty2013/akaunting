@@ -7,8 +7,6 @@
 <form role="form" method="POST" action="{{ url('auth/forgot') }}">
     {{ csrf_field() }}
 
-    @stack('email_input_start')
-
     <div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
         <input name="email" type="email" class="form-control" placeholder="{{ trans('auth.enter_email') }}" required>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -18,9 +16,6 @@
             </span>
         @endif
     </div>
-
-    @stack('email_input_end')
-
     <div class="row">
         <!-- /.col -->
         <div class="col-sm-offset-8 col-sm-4">

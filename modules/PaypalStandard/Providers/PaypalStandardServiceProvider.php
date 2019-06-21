@@ -2,9 +2,11 @@
 
 namespace Modules\PaypalStandard\Providers;
 
-use App\Events\PaymentGatewayListing;
 use Illuminate\Support\ServiceProvider;
-use Modules\PaypalStandard\Listeners\Gateway;
+use Illuminate\Database\Eloquent\Factory;
+
+use App\Events\PaymentGatewayListing;
+use Modules\PaypalStandard\Events\Handlers\PaypalStandardGateway;
 
 class PaypalStandardServiceProvider extends ServiceProvider
 {
@@ -23,8 +25,13 @@ class PaypalStandardServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerTranslations();
+        $this->registerConfig();
         $this->registerViews();
-        $this->registerEvents();
+        $this->registerFactories();
+
+        $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
+
+        $this->app['events']->listen(PaymentGatewayListing::class, PaypalStandardGateway::class);
     }
 
     /**
@@ -35,6 +42,22 @@ class PaypalStandardServiceProvider extends ServiceProvider
     public function register()
     {
         //
+    }
+
+    /**
+     * Register config.
+     *
+     * @return void
+     */
+    protected function registerConfig()
+    {
+        $this->publishes([
+            __DIR__.'/../Config/config.php' => config_path('paypalstandard.php'),
+        ], 'config');
+
+        $this->mergeConfigFrom(
+            __DIR__.'/../Config/config.php', 'paypalstandard'
+        );
     }
 
     /**
@@ -73,9 +96,15 @@ class PaypalStandardServiceProvider extends ServiceProvider
         }
     }
 
-    public function registerEvents()
+    /**
+     * Register an additional directory of factories.
+     * @source https://github.com/sebastiaanluca/laravel-resource-flow/blob/develop/src/Modules/ModuleServiceProvider.php#L66
+     */
+    public function registerFactories()
     {
-        $this->app['events']->listen(PaymentGatewayListing::class, Gateway::class);
+        if (! app()->environment('production')) {
+            app(Factory::class)->load(__DIR__ . '/Database/factories');
+        }
     }
 
     /**

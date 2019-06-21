@@ -8,10 +8,7 @@ return [
     'sku'                   => 'Cod.Art.',
 
     'notification' => [
-        'message'       => [
-            'reminder' => 'Stai ricevendo questa email perché è rimasto solo :quantity di :name.',
-            'out_of_stock' => 'Hai ricevuto questa email perché :name è esaurito.',
-        ],
+        'message'       => 'Hai ricevuto questa e-mail perché il :name è in esaurimento.',
         'button'        => 'Mostra ora',
     ],
 

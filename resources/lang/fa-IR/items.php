@@ -8,10 +8,7 @@ return [
     'sku'                   => 'کد کالا',
 
     'notification' => [
-        'message'       => [
-            'reminder' => 'You are receiving this email because only :quantity of :name has remained.',
-            'out_of_stock' => 'You are receiving this email because the :name is running out of stock.',
-        ],
+        'message'       => 'شما به این دلیل این ایمیل را دریافت کرده‌اید که موجودی :name در حال اتمام است.',
         'button'        => 'مشاهده',
     ],
 

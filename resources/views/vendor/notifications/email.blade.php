@@ -4,9 +4,9 @@
 # {{ $greeting }}
 @else
 @if ($level == 'error')
-# {{ trans('notifications.whoops') }}
+# Whoops!
 @else
-# {{ trans('notifications.hello') }}
+# Hello!
 @endif
 @endif
 
@@ -45,13 +45,14 @@
 @if (! empty($salutation))
 {{ $salutation }}
 @else
-{!! trans('notifications.salutation', ['company_name' => setting('general.company_name', config('mail.from.name', config('app.name')))]) !!}
+Regards,<br>{{ setting('general.company_name', config('app.name')) }}
 @endif
 
 <!-- Subcopy -->
 @isset($actionText)
 @component('mail::subcopy')
-{!! trans('notifications.subcopy', ['text' => $actionText, 'url' => $actionUrl]) !!}
+If you’re having trouble clicking the "{{ $actionText }}" button, copy and paste the URL below
+into your web browser: [{{ $actionUrl }}]({{ $actionUrl }})
 @endcomponent
 @endisset
 @endcomponent

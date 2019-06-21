@@ -11,8 +11,6 @@ return [
     ],
     'localisation' => [
         'tab'               => 'Localizção',
-        'financial_start'   => 'Início do ano fiscal',
-        'timezone'          => 'Fuso Horário',
         'date' => [
             'format'        => 'Formato da Data',
             'separator'     => 'Separador de Data',
@@ -22,6 +20,7 @@ return [
             'slash'         => 'Barra (/)',
             'space'         => 'Espaço ( )',
         ],
+        'timezone'          => 'Fuso Horário',
         'percent' => [
             'title'         => 'Posição do (%)',
             'before'        => 'Antes do número',
@@ -34,16 +33,6 @@ return [
         'digit'             => 'Número de dígitos',
         'next'              => 'Próximo número',
         'logo'              => 'Logotipo',
-        'custom'            => 'Personalizado',
-        'item_name'         => 'Nome do Item',
-        'item'              => 'Itens',
-        'product'           => 'Produtos',
-        'service'           => 'Serviços',
-        'price_name'        => 'Nome do preço',
-        'price'             => 'Preço',
-        'rate'              => 'Taxa',
-        'quantity_name'     => 'Nome da quantidade',
-        'quantity'          => 'Quantidade',
     ],
     'default' => [
         'tab'               => 'Padrões',
@@ -77,8 +66,6 @@ return [
         'bill_days'         => 'Enviar antes de vencer',
         'cron_command'      => 'Comando Cron',
         'schedule_time'     => 'Iniciar Cron',
-        'send_item_reminder'=> 'Enviar Lembrete',
-        'item_stocks'       => 'Enviar quando item possui estoque',
     ],
     'appearance' => [
         'tab'               => 'Aparência',

@@ -7,10 +7,5 @@ return [
 
     'error' => [
         'email'             => 'E-mail je već zauzet.'
-    ],
-
-    'notification' => [
-        'message'       => ':customer je uplatio :amount za fakturu broj :invoice_number.',
-        'button'        => 'Prikaži',
-    ],
+    ]
 ];

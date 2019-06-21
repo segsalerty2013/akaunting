@@ -52,7 +52,7 @@ class CustomerMenu
                 'order' => 3,
             ]);
 
-            // Transactions
+            // Payments
             $menu->add([
                 'url'   => 'customers/transactions',
                 'title' => trans_choice('general.transactions', 2),

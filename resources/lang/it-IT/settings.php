@@ -11,8 +11,6 @@ return [
     ],
     'localisation' => [
         'tab'               => 'Localizzazione',
-        'financial_start'   => 'Inizio Anno finanziario',
-        'timezone'          => 'Fuso Orario',
         'date' => [
             'format'        => 'Formato data',
             'separator'     => 'Separatore di data',
@@ -22,10 +20,11 @@ return [
             'slash'         => 'Slash (/)',
             'space'         => 'Spazio ( )',
         ],
+        'timezone'          => 'Fuso Orario',
         'percent' => [
-            'title'         => 'Percentuale (%) Posizione',
-            'before'        => 'Prima del Numero',
-            'after'         => 'Dopo il Numero',
+            'title'         => 'Percent (%) Position',
+            'before'        => 'Before Number',
+            'after'         => 'After Number',
         ],
     ],
     'invoice' => [
@@ -34,16 +33,6 @@ return [
         'digit'             => 'Numero cifre',
         'next'              => 'Codice fiscale',
         'logo'              => 'Logo',
-        'custom'            => 'Personalizzato',
-        'item_name'         => 'Nome dell\'elemento',
-        'item'              => 'Elementi',
-        'product'           => 'Prodotti',
-        'service'           => 'Servizi',
-        'price_name'        => 'Nome del prezzo',
-        'price'             => 'Prezzo',
-        'rate'              => 'Valutazione',
-        'quantity_name'     => 'Quantità Nome',
-        'quantity'          => 'Quantità',
     ],
     'default' => [
         'tab'               => 'Predefiniti',
@@ -77,8 +66,6 @@ return [
         'bill_days'         => 'Inviare entro Due giorni',
         'cron_command'      => 'Comando cron',
         'schedule_time'     => 'Ora di esecuzione',
-        'send_item_reminder'=> 'Invia promemoria oggetto',
-        'item_stocks'       => 'Invia quando l\'oggetto è in Stock',
     ],
     'appearance' => [
         'tab'               => 'Aspetto',

@@ -11,8 +11,6 @@ return [
     ],
     'localisation' => [
         'tab'               => 'Lokalisasi',
-        'financial_start'   => 'Financial Year Start',
-        'timezone'          => 'Zona Waktu',
         'date' => [
             'format'        => 'Format Tanggal',
             'separator'     => 'Pemisah Tanggal',
@@ -22,10 +20,11 @@ return [
             'slash'         => 'Garis Miring (/)',
             'space'         => 'Spasi ( )',
         ],
+        'timezone'          => 'Zona Waktu',
         'percent' => [
-            'title'         => 'Persen (%) Posisi',
-            'before'        => 'Sebelum Nomor',
-            'after'         => 'Sesudah Nomor',
+            'title'         => 'Percent (%) Position',
+            'before'        => 'Before Number',
+            'after'         => 'After Number',
         ],
     ],
     'invoice' => [
@@ -34,16 +33,6 @@ return [
         'digit'             => 'Digit nomor',
         'next'              => 'Nomor Berikutnya',
         'logo'              => 'Logo',
-        'custom'            => 'Personalisasi',
-        'item_name'         => 'Nama Barang',
-        'item'              => 'Barang',
-        'product'           => 'Produk',
-        'service'           => 'Layanan',
-        'price_name'        => 'Nama Harga',
-        'price'             => 'Harga',
-        'rate'              => 'Kurs',
-        'quantity_name'     => 'Nama Kuantitas',
-        'quantity'          => 'Kuantitas',
     ],
     'default' => [
         'tab'               => 'Standar',
@@ -77,8 +66,6 @@ return [
         'bill_days'         => 'Kirim Sebelum Jatuh Tempo',
         'cron_command'      => 'Perintah Cron',
         'schedule_time'     => 'Waktu untuk Menjalankan',
-        'send_item_reminder'=> 'Kirim Pengingat Item',
-        'item_stocks'       => 'Kirim Saat Item Tersedia',
     ],
     'appearance' => [
         'tab'               => 'Tampilan',

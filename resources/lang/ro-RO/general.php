@@ -38,9 +38,6 @@ return [
     'numbers'               => 'Număr | Numere',
     'statuses'              => 'Status | Statusuri',
     'others'                => 'Alta | Alte',
-    'contacts'              => 'Contact|Contacte',
-    'reconciliations'       => 'Reconsiliar bancar|Reconsilieri bancare',
-    'developers'            => 'Developer|Developers',
 
     'dashboard'             => 'Panou de bord',
     'banking'               => 'Bancare',
@@ -84,7 +81,6 @@ return [
     'color'                 => 'Culoare',
     'save'                  => 'Salveaza',
     'cancel'                => 'Anulează',
-    'loading'               => 'Se încarcă ...',
     'from'                  => 'Expeditor',
     'to'                    => 'Destinatar',
     'print'                 => 'Tipărește',
@@ -105,27 +101,12 @@ return [
     'partially'             => 'Partial',
     'partially_paid'        => 'Platit Partial',
     'export'                => 'Export',
-    'finish'                => 'Finalizare',
-    'wizard'                => 'Asistent',
-    'skip'                  => 'Omite',
-    'enable'                => 'Activeaza',
-    'disable'               => 'Dezactiveaza',
-    'select_all'            => 'Selectați toate',
-    'unselect_all'          => 'Deselectați toate',
-    'go_to'                 => 'Go to :name',
-    'created_date'          => 'Data creării',
-    'period'                => 'Perioadă',
-    'start'                 => 'Început',
-    'end'                   => 'Sfârşit',
-    'clear'                 => 'Șterge',
-    'difference'            => 'Diferență',
+    'enable'                => 'Enable',
+    'disable'               => 'Disable',
 
     'title' => [
         'new'               => ':type nou',
         'edit'              => 'Editeaza :type',
-        'create'            => 'Crează :type',
-        'send'              => 'Send :type',
-        'get'               => 'Get :type',
     ],
 
     'form' => [
@@ -137,11 +118,4 @@ return [
         'no_file_selected'  => 'Nici un fișier selectat...',
     ],
 
-    'date_range' => [
-        'today' => 'Astăzi',
-        'yesterday' => 'Ieri',
-        'last_days' => 'Ultimele :day Zile',
-        'this_month' => 'Luna aceasta',
-        'last_month' => 'Luna trecută',
-    ],
 ];

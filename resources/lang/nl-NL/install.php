@@ -6,20 +6,20 @@ return [
     'refresh'               => 'Vernieuwen',
 
     'steps' => [
-        'requirements'      => 'Vraag uw hostingprovider om de fout(en) op te lossen!',
+        'requirements'      => 'Alsjeblieft, aan de volgende eisen voldoen!',
         'language'          => 'Stap 1/3: Taalkeuze',
-        'database'          => 'Stap 2/3: Database Installatie',
-        'settings'          => 'Stap 3/3: Gegevens van Bedrijf en Beheerder',
+        'database'          => 'Stap 2/3: Database Setup',
+        'settings'          => 'Stap 3/3: Bedrijf en Administrator Details',
     ],
 
     'language' => [
-        'select'            => 'Taal selecteren',
+        'select'            => 'Selecteer taal',
     ],
 
     'requirements' => [
         'enabled'           => ':feature moet worden ingeschakeld!',
         'disabled'          => ':feature moet worden uitgeschakeld!',
-        'extension'         => ':extension extentie moet worden geïnstalleerd en geladen!',
+        'extension'         => ':extension uitbreiding moet worden geladen!',
         'directory'         => ':directory map moet schrijfbaar zijn!',
     ],
 
@@ -32,13 +32,13 @@ return [
 
     'settings' => [
         'company_name'      => 'Bedrijfsnaam',
-        'company_email'     => 'E-mailadres bedrijf',
-        'admin_email'       => 'E-mailadres beheerder',
-        'admin_password'    => 'Wachtwoord van beheerder',
+        'company_email'     => 'Bedrijf E-mail',
+        'admin_email'       => 'Beheerder E-mail',
+        'admin_password'    => 'Admin Wachtwoord',
     ],
 
     'error' => [
-        'connection'        => 'Fout: Kan geen verbinding met de database! Controleer of alle gegevens juist zijn.',
+        'connection'        => 'Fout: Kan geen verbinding met de database! Controleer of dat de gegevens juist zijn.',
     ],
 
 ];

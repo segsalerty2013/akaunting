@@ -16,7 +16,7 @@ return [
     'summary' => [
         'income'            => 'Inntektsammendrag',
         'expense'           => 'Utgiftsammendrag',
-        'income_expense'    => 'Inntekt mot utgift',
+        'income_expense'    => 'Inntekter mot utgifter',
         'tax'               => 'Avgiftsammendrag',
     ],
 

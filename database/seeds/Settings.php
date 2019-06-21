@@ -4,7 +4,7 @@ namespace Database\Seeds;
 
 use App\Models\Model;
 use Illuminate\Database\Seeder;
-use Date;
+use Setting;
 
 class Settings extends Seeder
 {
@@ -26,14 +26,10 @@ class Settings extends Seeder
     {
         $company_id = $this->command->argument('company');
 
-        setting()->forgetAll();
-        setting()->setExtraColumns(['company_id' => $company_id]);
-
-        setting()->set([
-            'general.financial_start'           => Date::now()->startOfYear()->format('d-m'),
-            'general.timezone'                  => 'Europe/London',
+        Setting::set([
             'general.date_format'               => 'd M Y',
             'general.date_separator'            => 'space',
+            'general.timezone'                  => 'Europe/London',
             'general.percent_position'          => 'after',
             'general.invoice_number_prefix'     => 'INV-',
             'general.invoice_number_digit'      => '5',
@@ -45,8 +41,6 @@ class Settings extends Seeder
             'general.schedule_invoice_days'     => '1,3,5,10',
             'general.send_bill_reminder'        => '0',
             'general.schedule_bill_days'        => '10,5,3,1',
-            'general.send_item_reminder'        => '0',
-            'general.schedule_item_stocks'      => '3,5,7',
             'general.schedule_time'             => '09:00',
             'general.admin_theme'               => 'skin-green-light',
             'general.list_limit'                => '25',
@@ -55,11 +49,7 @@ class Settings extends Seeder
             'general.session_lifetime'          => '30',
             'general.file_size'                 => '2',
             'general.file_types'                => 'pdf,jpeg,jpg,png',
-            'general.wizard'                    => '0',
-            'general.invoice_item'              => 'settings.invoice.item',
-            'general.invoice_price'             => 'settings.invoice.price',
-            'general.invoice_quantity'          => 'settings.invoice.quantity',
-            'offlinepayment.methods'            => '[{"code":"offlinepayment.cash.1","name":"Cash","order":"1","description":null},{"code":"offlinepayment.bank_transfer.2","name":"Bank Transfer","order":"2","description":null}]',
+            'offlinepayment.methods'           => '[{"code":"offlinepayment.cash.1","name":"Cash","order":"1","description":null},{"code":"offlinepayment.bank_transfer.2","name":"Bank Transfer","order":"2","description":null}]',
         ]);
     }
 }

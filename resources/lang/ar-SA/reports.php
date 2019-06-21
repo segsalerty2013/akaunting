@@ -7,24 +7,24 @@ return [
     'this_quarter'          => 'هذا الربع',
     'previous_quarter'      => 'الربع السابق',
     'last_12_months'        => 'آخر 12 شهر',
-    'profit_loss'           => 'الربح والخسارة',
-    'gross_profit'          => 'إجمالي الربح',
-    'net_profit'            => 'صافي الربح',
-    'total_expenses'        => 'إجمالي المصروفات',
-    'net'                   => 'صافي الدخل',
+    'profit_loss'           => 'Profit & Loss',
+    'gross_profit'          => 'Gross Profit',
+    'net_profit'            => 'Net Profit',
+    'total_expenses'        => 'Total Expenses',
+    'net'                   => 'NET',
 
     'summary' => [
-        'income'            => 'ملخص الإيرادات',
-        'expense'           => 'ملخص المصروفات',
+        'income'            => 'ملخص الايرادات',
+        'expense'           => 'مخلص المصروفات',
         'income_expense'    => 'الإيرادات مقابل المصروفات',
-        'tax'               => 'ملخص الضرائب',
+        'tax'               => 'Tax Summary',
     ],
 
     'quarter' => [
-        '1'                 => 'يناير-مارس',
-        '2'                 => 'أبريل-يونيو',
-        '3'                 => 'يوليو-سبتمبر',
-        '4'                 => 'أكتوبر-ديسمبر',
+        '1'                 => 'Jan-Mar',
+        '2'                 => 'Apr-Jun',
+        '3'                 => 'Jul-Sep',
+        '4'                 => 'Oct-Dec',
     ],
 
 ];

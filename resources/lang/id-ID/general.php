@@ -38,9 +38,6 @@ return [
     'numbers'               => 'Nomor | Nomor',
     'statuses'              => 'Status | Status',
     'others'                => 'Lain | Lain-lain',
-    'contacts'              => 'Kontak',
-    'reconciliations'       => 'Rekonsiliasi|Rekonsiliasi',
-    'developers'            => 'Developer|Developers',
 
     'dashboard'             => 'Dasbor',
     'banking'               => 'Perbankan',
@@ -84,7 +81,6 @@ return [
     'color'                 => 'Warna',
     'save'                  => 'Simpan',
     'cancel'                => 'Batal',
-    'loading'               => 'Sedang memuat...',
     'from'                  => 'Dari',
     'to'                    => 'Untuk',
     'print'                 => 'Cetak',
@@ -104,28 +100,13 @@ return [
     'overdue'               => 'Jatuh tempo',
     'partially'             => 'Sebagian',
     'partially_paid'        => 'Sebagian dibayar',
-    'export'                => 'Ekspor',
-    'finish'                => 'Selesai',
-    'wizard'                => 'Wizard',
-    'skip'                  => 'Lewati',
-    'enable'                => 'Aktif',
-    'disable'               => 'Nonaktif',
-    'select_all'            => 'Pilih Semua',
-    'unselect_all'          => 'Batalkan Memilih Semua',
-    'go_to'                 => 'Menuju ke :name',
-    'created_date'          => 'Tanggal Dibuat',
-    'period'                => 'Periode',
-    'start'                 => 'Mulai',
-    'end'                   => 'Selesai',
-    'clear'                 => 'Hapus',
-    'difference'            => 'Perbedaan',
+    'export'                => 'Export',
+    'enable'                => 'Enable',
+    'disable'               => 'Disable',
 
     'title' => [
         'new'               => 'Baru :type',
         'edit'              => 'Sunting :type',
-        'create'            => 'Buat :type',
-        'send'              => 'Kirim :type',
-        'get'               => 'Ambil :type',
     ],
 
     'form' => [
@@ -137,11 +118,4 @@ return [
         'no_file_selected'  => 'Tidak ada Berkas yang dipilih...',
     ],
 
-    'date_range' => [
-        'today' => 'Hari Ini',
-        'yesterday' => 'Kemarin',
-        'last_days' => ':day Hari Terakhir',
-        'this_month' => 'Bulan Ini',
-        'last_month' => 'Bulan Lalu',
-    ],
 ];

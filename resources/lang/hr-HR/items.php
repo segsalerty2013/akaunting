@@ -8,10 +8,7 @@ return [
     'sku'                   => 'SKU',
 
     'notification' => [
-        'message'       => [
-            'reminder' => 'Primili ste ovaj e-mail jer je preostalo samo :quantity :name.',
-            'out_of_stock' => 'Primili ste ovaj e-mail jer ponestaje zaliha za :name.',
-        ],
+        'message'       => 'Primili ste ovaj e-mail jer ponestaje zaliha za :name.',
         'button'        => 'Pogledaj sada',
     ],
 

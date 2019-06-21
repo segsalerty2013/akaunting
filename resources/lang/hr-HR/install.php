@@ -2,11 +2,11 @@
 
 return [
 
-    'next'                  => 'Dalje',
+    'next'                  => 'Sljedeći',
     'refresh'               => 'Osvježi',
 
     'steps' => [
-        'requirements'      => 'Molimo da zatražite svog davatelja hosting usluge da ispravi pogreške!',
+        'requirements'      => 'Molimo da zadovoljite sljedeće uvjete!',
         'language'          => 'Korak 1/3: Odabir jezika',
         'database'          => 'Korak 2/3: Postavka baze podataka',
         'settings'          => 'Korak 3/3: Tvrtka i admin detalji',
@@ -19,12 +19,12 @@ return [
     'requirements' => [
         'enabled'           => ':feature mora biti omogućeno!',
         'disabled'          => ':feature mora biti onemogućeno!',
-        'extension'         => ':extension proširenje mora biti instalirano i učitano!',
+        'extension'         => ':extension proširenje treba biti učitano!',
         'directory'         => ':directory direktorij mora biti omogućen za zapisivanje!',
     ],
 
     'database' => [
-        'hostname'          => 'Server',
+        'hostname'          => 'Naziv hosta',
         'username'          => 'Korisničko ime',
         'password'          => 'Lozinka',
         'name'              => 'Baza podataka',

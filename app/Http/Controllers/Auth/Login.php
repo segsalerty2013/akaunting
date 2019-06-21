@@ -49,7 +49,7 @@ class Login extends Controller
     public function store()
     {
         // Attempt to login
-        if (!auth()->attempt(request(['email', 'password']), request('remember', false))) {
+        if (!auth()->attempt(request(['email', 'password']))) {
             flash(trans('auth.failed'))->error();
 
             return back();
@@ -79,7 +79,7 @@ class Login extends Controller
             return redirect($path);
         }
 
-        return redirect()->intended('wizard');
+        return redirect('/');
     }
 
     public function destroy()

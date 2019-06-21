@@ -101,8 +101,6 @@ return [
         'attribute-name' => [
             'rule-name' => 'προσαρμοσμένο-μήνυμα',
         ],
-        'invalid_currency' => 'Το πεδίο :attribute δεν είναι έγκυρος κωδικός νομίσματος.',
-        'invalid_amount'   => 'Το πεδίο :attribute δεν είναι έγκυρο ποσό.',
     ],
 
     /*

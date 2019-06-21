@@ -8,10 +8,7 @@ return [
     'sku'                   => 'Référence (SKU)',
 
     'notification' => [
-        'message'       => [
-            'reminder' => 'Vous recevez cet email car seulement :quantity de :name reste.',
-            'out_of_stock' => 'Vous recevez cet email parce que le stock de :name est presque épuisé.',
-        ],
+        'message'       => 'Vous recevez cet e-mail car :name est en rupture de stock.',
         'button'        => 'Voir Maintenant',
     ],
 

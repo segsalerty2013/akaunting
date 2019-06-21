@@ -9,8 +9,7 @@
             'method' => 'PATCH',
             'files' => true,
             'url' => ['customers/profile/update'],
-            'role' => 'form',
-            'class' => 'form-loading-button'
+            'role' => 'form'
         ]) !!}
 
         <div class="box-body">
@@ -64,30 +63,31 @@
                 text  : '{{ trans('general.form.select.file') }}',
                 style : 'btn-default',
                 @if($user->picture)
-                placeholder : '{{ $user->picture->basename }}'
+                placeholder : '<?php echo $user->picture->basename; ?>'
                 @else
                 placeholder : '{{ trans('general.form.no_file_selected') }}'
                 @endif
             });
 
             @if($user->picture)
-            $.ajax({
-                url: '{{ url('uploads/' . $user->picture->id . '/show') }}',
-                type: 'GET',
-                data: {column_name: 'picture'},
-                dataType: 'JSON',
-                success: function(json) {
-                    if (json['success']) {
-                        $('.fancy-file').after(json['html']);
-                    }
-                }
-            });
+                picture_html  = '<span class="picture">';
+                picture_html += '    <a href="{{ url('uploads/' . $user->picture->id . '/download') }}">';
+                picture_html += '        <span id="download-picture" class="text-primary">';
+                picture_html += '            <i class="fa fa-file-{{ $user->picture->aggregate_type }}-o"></i> {{ $user->picture->basename }}';
+                picture_html += '        </span>';
+                picture_html += '    </a>';
+                picture_html += '    {!! Form::open(['id' => 'picture-' . $user->picture->id, 'method' => 'DELETE', 'url' => [url('uploads/' . $user->picture->id)], 'style' => 'display:inline']) !!}';
+                picture_html += '    <a id="remove-picture" href="javascript:void();">';
+                picture_html += '        <span class="text-danger"><i class="fa fa fa-times"></i></span>';
+                picture_html += '    </a>';
+                picture_html += '    {!! Form::close() !!}';
+                picture_html += '</span>';
 
-            @permission('delete-common-uploads')
-            $(document).on('click', '#remove-picture', function (e) {
-                confirmDelete("#picture-{!! $user->picture->id !!}", "{!! trans('general.attachment') !!}", "{!! trans('general.delete_confirm', ['name' => '<strong>' . $user->picture->basename . '</strong>', 'type' => strtolower(trans('general.attachment'))]) !!}", "{!! trans('general.cancel') !!}", "{!! trans('general.delete')  !!}");
-            });
-            @endpermission
+                $('.fancy-file .fake-file').append(picture_html);
+
+                $(document).on('click', '#remove-picture', function (e) {
+                    confirmDelete("#picture-{!! $user->picture->id !!}", "{!! trans('general.attachment') !!}", "{!! trans('general.delete_confirm', ['name' => '<strong>' . $user->picture->basename . '</strong>', 'type' => strtolower(trans('general.attachment'))]) !!}", "{!! trans('general.cancel') !!}", "{!! trans('general.delete')  !!}");
+                });
             @endif
         });
     </script>

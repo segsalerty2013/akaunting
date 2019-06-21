@@ -3,7 +3,7 @@
 
     <hr>
 
-    <div class="table table-responsive table-report">
+    <div class="table table-responsive">
         <table class="table table-bordered table-striped table-hover" id="tbl-payments">
             <thead>
             <tr>
@@ -25,9 +25,9 @@
                             @endif
                             @foreach($category as $item)
                                 @if($type == 'income')
-                                    <td class="text-right">@money($item['amount'], setting('general.default_currency'), true)</td>
+                                    <td class="text-right">@money($item['amount'], $item['currency_code'], true)</td>
                                 @else
-                                    <td class="text-right">@money(-$item['amount'], setting('general.default_currency'), true)</td>
+                                    <td class="text-right">@money(-$item['amount'], $item['currency_code'], true)</td>
                                 @endif
                             @endforeach
                         </tr>

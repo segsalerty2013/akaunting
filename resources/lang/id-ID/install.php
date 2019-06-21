@@ -6,7 +6,7 @@ return [
     'refresh'               => 'Menyegarkan',
 
     'steps' => [
-        'requirements'      => 'Silakan meminta penyedia hosting Anda untuk memperbaiki kesalahan!',
+        'requirements'      => 'Tolong, memenuhi persyaratan berikut!',
         'language'          => 'Langkah 1/3 : Seleksi Bahasa',
         'database'          => 'Langkah 2/3 : Setup basis data',
         'settings'          => 'Langkah 3/3: Detail Perusahaan dan Admin',
@@ -19,7 +19,7 @@ return [
     'requirements' => [
         'enabled'           => ':feature perlu diaktifkan!',
         'disabled'          => ':feature perlu dinonaktifkan!',
-        'extension'         => ': ekstensi ekstensi perlu diinstal dan dimuat!',
+        'extension'         => ':extension ekstensi perlu dimuat!',
         'directory'         => ':directory direktori perlu ditulis!',
     ],
 

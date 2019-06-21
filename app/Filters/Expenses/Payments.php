@@ -19,27 +19,18 @@ class Payments extends ModelFilter
         return $this->whereLike('description', $query);
     }
 
-    public function vendors($vendors)
+    public function vendor($vendor)
     {
-        return $this->whereIn('vendor_id', (array) $vendors);
+        return $this->where('vendor_id', $vendor);
     }
 
-    public function categories($categories)
+    public function category($category)
     {
-        return $this->whereIn('category_id', (array) $categories);
+        return $this->where('category_id', $category);
     }
 
-    public function accounts($accounts)
+    public function account($account)
     {
-        return $this->whereIn('account_id', (array) $accounts);
-    }
-
-    public function date($date)
-    {
-        $dates = explode('_', $date);
-        $dates[0] .= ' 00:00:00';
-        $dates[1] .= ' 23:59:59';
-
-        return $this->whereBetween('paid_at', $dates);
+        return $this->where('account_id', $account);
     }
 }

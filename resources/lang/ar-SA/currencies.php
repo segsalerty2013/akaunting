@@ -9,8 +9,8 @@ return [
     'thousands_separator'   => 'فاصل الآلاف',
     'precision'             => 'الدقة',
     'symbol' => [
-        'symbol'            => 'الرمز',
-        'position'          => 'مكان الرمز',
+        'symbol'            => 'رمز',
+        'position'          => 'مكان رمز',
         'before'            => 'قبل القيمة',
         'after'             => 'بعد القيمة',
     ]

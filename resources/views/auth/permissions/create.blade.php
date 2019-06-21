@@ -5,7 +5,7 @@
 @section('content')
     <!-- Default box -->
     <div class="box box-success">
-        {!! Form::open(['url' => 'auth/permissions', 'role' => 'form', 'class' => 'form-loading-button']) !!}
+        {!! Form::open(['url' => 'auth/permissions', 'role' => 'form']) !!}
 
         <div class="box-body">
             {{ Form::textGroup('display_name', trans('general.name'), 'id-card-o') }}

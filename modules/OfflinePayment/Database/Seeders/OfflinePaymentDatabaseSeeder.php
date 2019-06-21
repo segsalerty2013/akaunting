@@ -4,6 +4,7 @@ namespace Modules\OfflinePayment\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Setting;
 
 class OfflinePaymentDatabaseSeeder extends Seeder
 {
@@ -23,28 +24,24 @@ class OfflinePaymentDatabaseSeeder extends Seeder
 
     private function create()
     {
-        $company_id = $this->command->argument('company');
+        $methods = array();
 
-        setting()->setExtraColumns(['company_id' => $company_id]);
-
-        $methods = [];
-
-        $methods[] = [
+        $methods[] = array(
             'code' => 'offlinepayment.cash.1',
             'name' => 'Cash',
             'customer' => '0',
             'order' => '1',
             'description' => null,
-        ];
+        );
 
-        $methods[] = [
+        $methods[] = array(
             'code' => 'offlinepayment.bank_transfer.2',
             'name' => 'Bank Transfer',
             'customer' => '0',
             'order' => '2',
             'description' => null,
-        ];
+        );
 
-        setting()->set('offlinepayment.methods', json_encode($methods));
+        Setting::set('offlinepayment.methods', json_encode($methods));
     }
 }

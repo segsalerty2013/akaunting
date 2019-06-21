@@ -101,8 +101,6 @@ return [
         'attribute-name' => [
             'rule-name' => 'ข้อความแบบกำหนดเอง',
         ],
-        'invalid_currency' => 'รูปแบบของ :attribute ไม่ถูกต้อง',
-        'invalid_amount'   => 'ปริมาณ:attribute ไม่ถูกต้อง',
     ],
 
     /*

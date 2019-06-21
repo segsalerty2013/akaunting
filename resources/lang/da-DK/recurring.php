@@ -2,10 +2,10 @@
 
 return [
 
-    'recurring'             => 'Gentagende',
+    'recurring'             => 'Tilbagevendende',
     'every'                 => 'Hver',
     'period'                => 'Periode',
-    'times'                 => 'Gange',
+    'times'                 => 'Tid',
     'daily'                 => 'Daglig',
     'weekly'                => 'Ugentlig',
     'monthly'               => 'Månedlig',

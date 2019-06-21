@@ -101,8 +101,6 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
-        'invalid_currency' => ':attribute код е невалиден.',
-        'invalid_amount'   => 'Сумата :attribute е невалидна.',
     ],
 
     /*

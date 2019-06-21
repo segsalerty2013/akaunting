@@ -4,21 +4,21 @@ return [
 
     'name'      =>  'Akaunting',
 
-    'code'      =>  'Reconciliation',
+    'code'      =>  'Recurring',
 
     'major'     =>  '1',
 
-    'minor'     =>  '3',
+    'minor'     =>  '2',
 
-    'patch'     =>  '15',
+    'patch'     =>  '9',
 
     'build'     =>  '',
 
     'status'    =>  'Stable',
 
-    'date'      =>  '26-March-2019',
+    'date'      =>  '27-June-2018',
 
-    'time'      =>  '18:00',
+    'time'      =>  '20:30',
 
     'zone'      =>  'GMT +3',
 

@@ -11,8 +11,6 @@ return [
     ],
     'localisation' => [
         'tab'               => 'Lokalizimi',
-        'financial_start'   => 'Fillimi i Vitit Financiar',
-        'timezone'          => 'Zona Kohore',
         'date' => [
             'format'        => 'Formati i Datës',
             'separator'     => 'Ndarës i Datës',
@@ -22,6 +20,7 @@ return [
             'slash'         => 'Prerje (/)',
             'space'         => 'Hapësirë ( )',
         ],
+        'timezone'          => 'Zona Kohore',
         'percent' => [
             'title'         => 'Pozicioni Përqindja (%)',
             'before'        => 'Para Numrit',
@@ -34,16 +33,6 @@ return [
         'digit'             => 'Gjatësia a numrit',
         'next'              => 'Numri tjetër',
         'logo'              => 'Logoja',
-        'custom'            => 'Special',
-        'item_name'         => 'Emri i artikullit',
-        'item'              => 'Artikujt',
-        'product'           => 'Produktet',
-        'service'           => 'Shërbimet',
-        'price_name'        => 'Emri i çmimit',
-        'price'             => 'Çmimi',
-        'rate'              => 'Normë',
-        'quantity_name'     => 'Emri i sasisë',
-        'quantity'          => 'Sasia',
     ],
     'default' => [
         'tab'               => 'Parazgjedhjet',
@@ -77,8 +66,6 @@ return [
         'bill_days'         => 'Dërgo Para Ditëve të Duhura',
         'cron_command'      => 'Komanda Cron',
         'schedule_time'     => 'Ora për të Kandiduar',
-        'send_item_reminder'=> 'Dërgo Artikullin Rikujtimor',
-        'item_stocks'       => 'Dërgo Kur Artikulli në Stok',
     ],
     'appearance' => [
         'tab'               => 'Pamja',

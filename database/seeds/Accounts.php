@@ -4,6 +4,7 @@ namespace Database\Seeds;
 
 use App\Models\Model;
 use App\Models\Banking\Account;
+use Setting;
 use Illuminate\Database\Seeder;
 
 class Accounts extends Seeder
@@ -26,8 +27,6 @@ class Accounts extends Seeder
     {
         $company_id = $this->command->argument('company');
 
-        setting()->setExtraColumns(['company_id' => $company_id]);
-
         $rows = [
             [
                 'company_id' => $company_id,
@@ -42,7 +41,7 @@ class Accounts extends Seeder
         foreach ($rows as $row) {
             $account = Account::create($row);
 
-            setting()->set('general.default_account', $account->id);
+            Setting::set('general.default_account', $account->id);
         }
     }
 }

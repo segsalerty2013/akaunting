@@ -4,13 +4,12 @@ namespace App\Models\Expense;
 
 use App\Models\Model;
 use Bkwld\Cloner\Cloneable;
-use App\Traits\Currencies;
 use Sofa\Eloquence\Eloquence;
 use App\Traits\Media;
 
 class Vendor extends Model
 {
-    use Cloneable, Currencies, Eloquence, Media;
+    use Cloneable, Eloquence, Media;
 
     protected $table = 'vendors';
 
@@ -19,7 +18,7 @@ class Vendor extends Model
      *
      * @var array
      */
-    protected $fillable = ['company_id', 'name', 'email', 'tax_number', 'phone', 'address', 'website', 'currency_code', 'reference', 'enabled'];
+    protected $fillable = ['company_id', 'name', 'email', 'tax_number', 'phone', 'address', 'website', 'currency_code', 'enabled'];
 
     /**
      * Sortable columns.
@@ -70,20 +69,5 @@ class Vendor extends Model
         }
 
         return $this->getMedia('logo')->last();
-    }
-
-    public function getUnpaidAttribute()
-    {
-        $amount = 0;
-
-        $bills = $this->bills()->accrued()->notPaid()->get();
-
-        foreach ($bills as $bill) {
-            $bill_amount = $bill->amount - $bill->paid;
-
-            $amount += $this->dynamicConvert(setting('general.default_currency'), $bill_amount, $bill->currency_code, $bill->currency_rate, false);
-        }
-
-        return $amount;
     }
 }

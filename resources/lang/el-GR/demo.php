@@ -9,5 +9,8 @@ return [
     'currencies_eur'        => 'Ευρώ',
     'currencies_gbp'        => 'Βρετανική Λίρα',
     'currencies_try'        => 'Τουρκική Λίρα',
+    'taxes_exempt'          => 'Φοροαπαλλαγή',
+    'taxes_normal'          => 'Κανονικό ΦΠΑ',
+    'taxes_sales'           => 'ΦΠΑ πωλήσεων',
 
 ];

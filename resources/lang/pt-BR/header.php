@@ -11,6 +11,5 @@ return [
         'items_stock'       => '{1}: item de contagem fora de estoque | [2, *]: contar itens fora de estoque',
         'view_all'          => 'Visualizar todos'
     ],
-    'docs_link'             => 'https://akaunting.com/docs',
 
 ];

@@ -6,7 +6,7 @@ return [
     'refresh'               => 'Reîncarcă',
 
     'steps' => [
-        'requirements'      => 'Va rugam, cere furnizorului serviciilor de hosting sa rezolve erorile!',
+        'requirements'      => 'Te rugăm să îndeplinesti următoarele cerinţe!',
         'language'          => 'Pasul 1/3: Selectati limba',
         'database'          => 'Pasul 2/3: Configurarea bazei de date',
         'settings'          => 'Pasul 3/3: Detalii despre Companie şi Administrator',
@@ -19,7 +19,7 @@ return [
     'requirements' => [
         'enabled'           => ':feature trebuie să fie activat/a!',
         'disabled'          => ':feature trebuie să fie dezactivat/a!',
-        'extension'         => 'Extensia :extension trebuie sa fie instalata si incarcata!',
+        'extension'         => 'extensia :extension trebuie să fie încărcată!',
         'directory'         => 'directorul :directory trebuie să permita scrierea!',
     ],
 

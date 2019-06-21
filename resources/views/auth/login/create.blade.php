@@ -4,10 +4,9 @@
 @section('message', trans('auth.login_to'))
 
 @section('content')
-<form role="form" method="POST" action="{{ url('auth/login') }}" class="form-loading-button">
+<form role="form" method="POST" action="{{ url('auth/login') }}">
     {{ csrf_field() }}
 
-    @stack('email_input_start')
     <div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
         <input name="email" type="email" class="form-control" placeholder="{{ trans('general.email') }}" required autofocus>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -17,9 +16,6 @@
             </span>
         @endif
     </div>
-    @stack('email_input_end')
-
-    @stack('password_input_start')
     <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
         <input name="password" type="password" class="form-control" placeholder="{{ trans('auth.password.current') }}" required>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
@@ -29,10 +25,7 @@
             </span>
         @endif
     </div>
-    @stack('password_input_end')
-
     <div class="row">
-        @stack('remember_input_start')
         <div class="col-sm-8">
             <div class="checkbox icheck">
                 <label>
@@ -40,11 +33,9 @@
                 </label>
             </div>
         </div>
-        @stack('remember_input_end')
         <!-- /.col -->
-
         <div class="col-sm-4">
-            <button type="submit" class="btn btn-success btn-block btn-flat button-submit" data-loading-text="{{ trans('general.loading') }}">{{ trans('auth.login') }}</button>
+            <button type="submit" class="btn btn-success btn-block btn-flat">{{ trans('auth.login') }}</button>
         </div>
         <!-- /.col -->
     </div>

@@ -11,6 +11,5 @@ return [
         'items_stock'       => '{1} :count 項目無庫存 | [2,*] :count 項目無庫存',
         'view_all'          => '檢視全部'
     ],
-    'docs_link'             => 'https://akaunting.com/docs',
 
 ];

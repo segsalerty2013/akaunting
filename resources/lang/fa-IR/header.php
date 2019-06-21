@@ -11,6 +11,5 @@ return [
         'items_stock'       => '{1} :count موجود است | [2,*] :count موجود است',
         'view_all'          => 'نمایش همه'
     ],
-    'docs_link'             => 'https://akaunting.com/docs',
 
 ];

@@ -18,11 +18,7 @@ class Uploads extends Controller
      */
     public function get($id)
     {
-        try {
-            $media = Media::find($id);
-        } catch (\Exception $e) {
-            return false;
-        }
+        $media = Media::find($id);
 
         // Get file path
         if (!$path = $this->getPath($media)) {
@@ -33,65 +29,6 @@ class Uploads extends Controller
     }
 
     /**
-     * Get the specified resource.
-     *
-     * @param  $id
-     * @return mixed
-     */
-    public function show($id, Request $request)
-    {
-        $file = false;
-        $options = false;
-        $column_name = 'attachment';
-
-        if ($request->has('column_name')) {
-            $column_name = $request->get('column_name');
-        }
-
-        if ($request->has('page')) {
-            $options = [
-                'page' => $request->get('page'),
-                'key' => $request->get('key'),
-            ];
-        }
-
-        try {
-            $media = Media::find($id);
-        } catch (\Exception $e) {
-            return response()->json([
-                'success' => false,
-                'error'   => true,
-                'data'    => [],
-                'message' => 'null',
-                'html'    => '',
-            ]);
-        }
-
-        // Get file path
-        if (!$path = $this->getPath($media)) {
-            return response()->json([
-                'success' => false,
-                'error'   => true,
-                'data'    => [],
-                'message' => 'null',
-                'html'    => '',
-            ]);
-        }
-
-        $file = $media;
-
-        $html = view('partials.media.file', compact('file', 'column_name', 'options'))->render();
-
-        return response()->json([
-            'success' => true,
-            'error'   => false,
-            'data'    => [],
-            'message' => 'null',
-            'html'    => $html,
-        ]);
-    }
-
-    /**
      * Download the specified resource.
      *
      * @param  $id
@@ -99,11 +36,7 @@ class Uploads extends Controller
      */
     public function download($id)
     {
-        try {
-            $media = Media::find($id);
-        } catch (\Exception $e) {
-            return false;
-        }
+        $media = Media::find($id);
 
         // Get file path
         if (!$path = $this->getPath($media)) {
@@ -121,11 +54,7 @@ class Uploads extends Controller
      */
     public function destroy($id, Request $request)
     {
-        try {
-            $media = Media::find($id);
-        } catch (\Exception $e) {
-            return back();
-        }
+        $media = Media::find($id);
 
         // Get file path
         if (!$path = $this->getPath($media)) {
@@ -147,6 +76,7 @@ class Uploads extends Controller
 
                     setting()->save();
                     break;
+                default;
             }
         }
 
@@ -161,10 +91,6 @@ class Uploads extends Controller
      */
     protected function getPath($media)
     {
-        if (!is_object($media)) {
-            return false;
-        }
-
         $path = $media->basename;
 
         if (!empty($media->directory)) {

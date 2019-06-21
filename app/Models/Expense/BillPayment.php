@@ -6,7 +6,6 @@ use App\Models\Model;
 use App\Traits\Currencies;
 use App\Traits\DateTime;
 use App\Traits\Media;
-use Date;
 
 class BillPayment extends Model
 {
@@ -100,10 +99,5 @@ class BillPayment extends Model
         }
 
         return $this->getMedia('attachment')->last();
-    }
-
-    public function getDivideConvertedAmount($format = false)
-    {
-        return $this->divide($this->amount, $this->currency_code, $this->currency_rate, $format);
     }
 }

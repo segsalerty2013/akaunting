@@ -3,7 +3,7 @@
 
     <hr>
 
-    <div class="table table-responsive table-report">
+    <div class="table table-responsive">
         <table class="table table-bordered table-striped table-hover" id="tbl-report-expenses">
             <thead>
             <tr>
@@ -19,13 +19,13 @@
                     <tr>
                         <td>{{ $categories[$category_id] }}</td>
                         @foreach($category as $item)
-                            <td class="text-right">@money($item['amount'], setting('general.default_currency'), true)</td>
+                            <td class="text-right">@money($item['amount'], $item['currency_code'], true)</td>
                         @endforeach
                     </tr>
                 @endforeach
             @else
                 <tr>
-                    <td colspan="13">
+                    <td colspan="4">
                         <h5 class="text-center">{{ trans('general.no_records') }}</h5>
                     </td>
                 </tr>

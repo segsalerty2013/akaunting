@@ -282,7 +282,7 @@ class Users extends Controller
         }
 
         // Redirect to items
-        return redirect('common/items');
+        return redirect('items/items');
     }
 
     public function autocomplete(ARequest $request)

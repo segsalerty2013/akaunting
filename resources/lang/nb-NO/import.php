@@ -4,6 +4,6 @@ return [
 
     'import'                => 'Importer',
     'title'                 => 'Importer :type',
-    'message'               => 'Tillate filtyper: XLS, XLSX. Vennligst <a target="_blank" href=":link"><strong>last ned</strong></a> malfilen.',
+    'message'               => 'Tillatte filtyper: CSV, XLS. <a target="_blank" href=":link"><strong>Last ned eksempelfilen</strong></a>.',
 
 ];

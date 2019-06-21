@@ -11,6 +11,5 @@ return [
         'items_stock'       => '{1} :count articol scazut din stoc | [2, *] :count articole scazute din stoc',
         'view_all'          => 'Vezi toate elementele'
     ],
-    'docs_link'             => 'https://akaunting.com/docs',
 
 ];

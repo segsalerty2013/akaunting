@@ -3,6 +3,7 @@
 return [
 
     'accounts_cash'         => 'پول نقد',
+    'categories_uncat'      => 'بدون بخش',
     'categories_deposit'    => 'سپرده',
     'categories_sales'      => 'فروش',
     'currencies_usd'        => 'دلار آمریکا',

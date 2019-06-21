@@ -19,8 +19,8 @@ class Categories extends ModelFilter
         return $this->whereLike('name', $query);
     }
 
-    public function types($types)
+    public function type($type)
     {
-        return $this->whereIn('type', (array) $types);
+        return $this->where('type', $type);
     }
 }

@@ -11,6 +11,5 @@ return [
         'items_stock'       => '{1} :count стока без наличност|[2,*] :count стоки без наличност',
         'view_all'          => 'Вижте всички'
     ],
-    'docs_link'             => 'https://akaunting.com/docs',
 
 ];

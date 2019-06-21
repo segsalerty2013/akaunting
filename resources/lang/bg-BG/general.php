@@ -8,7 +8,7 @@ return [
     'revenues'              => 'Приходи | Приходи',
     'customers'             => 'Клиент | Клиенти',
     'expenses'              => 'Разход| Разходи',
-    'bills'                 => 'Фактура| Фактура',
+    'bills'                 => 'Сметка| Сметки',
     'payments'              => 'Плащане | Плащания',
     'vendors'               => 'Доставчик | Доставчици',
     'accounts'              => 'Сметка | Сметки',
@@ -37,11 +37,7 @@ return [
     'updates'               => 'Актуализация | Актуализации',
     'numbers'               => 'Номер | Числа',
     'statuses'              => 'Статус | Статуси',
-    'others'                => 'Други|други',
-    'contacts'              => 'Контакт|Контакти',
-    'reconciliations'       => 'Оспорване|Оспорвания',
-    'deposits'              => 'Депозит|Депозити',
-    'withdrawals'           => 'Теглене |Тегления',
+    'others'                => 'Other|Others',
 
     'dashboard'             => 'Табло',
     'banking'               => 'Банкиране',
@@ -85,7 +81,6 @@ return [
     'color'                 => 'Цвят',
     'save'                  => 'Запиши',
     'cancel'                => 'Отмени',
-    'loading'               => 'Зареждане...',
     'from'                  => 'От',
     'to'                    => 'До',
     'print'                 => 'Печат',
@@ -105,30 +100,11 @@ return [
     'overdue'               => 'Прослочени',
     'partially'             => 'Частичен',
     'partially_paid'        => 'Частично платено',
-    'export'                => 'Експорт',
-    'finish'                => 'Завърши',
-    'wizard'                => 'Съветник',
-    'skip'                  => 'Пропусни',
-    'enable'                => 'Включи',
-    'disable'               => 'Изключи',
-    'select_all'            => 'Избери Всички',
-    'unselect_all'          => 'Отмени всички',
-    'go_to'                 => 'Отидете на :name',
-    'created_date'          => 'Дата на създаване',
-    'period'                => 'Период',
-    'start'                 => 'Начало',
-    'end'                   => 'Край',
-    'clear'                 => 'Изчисти',
-    'difference'            => 'Разлика',
 
     'title' => [
         'new'               => 'Нов :type',
         'edit'              => 'Редактирай :type',
-        'create'            => 'Създай :type',
-        'send'              => 'Изпрати :type',
-        'get'               => 'Получи :type',
     ],
-
     'form' => [
         'enter'             => 'Въведи :field',
         'select' => [
@@ -138,11 +114,4 @@ return [
         'no_file_selected'  => 'Не е избран файл...',
     ],
 
-    'date_range' => [
-        'today' => 'Днес',
-        'yesterday' => 'Вчера',
-        'last_days' => 'Последни :day дни',
-        'this_month' => 'Този месец',
-        'last_month' => 'Последния месец',
-    ],
 ];

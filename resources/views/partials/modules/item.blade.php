@@ -30,28 +30,18 @@
 
         <div class="box-footer">
             <div class="pull-left">
-            @for($i = 1; $i <= $module->vote; $i++)
-                <i class="fa fa-star fa-lg"></i>
-            @endfor
-            @for($i = $module->vote; $i < 5; $i++)
-                <i class="fa fa-star-o fa-lg"></i>
-            @endfor
-            @if ($module->total_review)
-                &nbsp; ({{ $module->total_review }})
-            @endif
+                {{ $module->vendor_name }}
             </div>
             <div class="pull-right">
                 @if ($module->price == '0.0000')
                     {{ trans('modules.free') }}
                 @else
-                    {!! $module->price_prefix !!}
                     @if (isset($module->special_price))
                         <del>{{ $module->price }}</del>
                         {{ $module->special_price }}
                     @else
                         {{ $module->price }}
                     @endif
-                    {!! $module->price_suffix !!}
                 @endif
             </div>
         </div>
