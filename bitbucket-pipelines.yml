@@ -1,0 +1,34 @@
+# This is a sample build configuration for PHP.
+# Check our guides at https://confluence.atlassian.com/x/e8YWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: php:7.2
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - composer
+        script:
+          - apt-get update && apt-get install -y unzip
+          - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+          - composer install
+  branches:
+    release/bqstore:
+      - step:
+          name: Deploy to BQ STORE
+          deployment: production
+          script:
+            - apt-get update && apt-get install -y zip
+            - zip -r app.zip .
+            - pipe: atlassian/aws-elasticbeanstalk-deploy:0.2.5 # deploy to main app
+              variables:
+                AWS_ACCESS_KEY_ID: $BQ_AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $BQ_AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: "us-west-2"
+                APPLICATION_NAME: bqstore
+                ENVIRONMENT_NAME: Bqstore-env
+                ZIP_FILE: "app.zip"
+                DEBUG: 'TRUE'
+                VERSION_LABEL: ${ENVIRONMENT_NAME}_${BITBUCKET_COMMIT:0:8}_app
